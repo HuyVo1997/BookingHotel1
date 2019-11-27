@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e8efa11c-2c4c-4c79-8592-45870056f0de" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1RrJS9InxjGJto5oe2aVhT9tLJe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/img/imgroom" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.EditorConfig" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static/img/imgroom" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static/css" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static/img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BookinghotelApplication">
+    <configuration name="BookinghotelApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="BookingHotel" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bookinghotel.BookinghotelApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.11" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.11" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8.0_221" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_BookingHotel" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="49876" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.BookinghotelApplication" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.11" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e8efa11c-2c4c-4c79-8592-45870056f0de" name="Default Changelist" comment="" />
+      <created>1570419278871</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570419278871</updated>
+      <workItem from="1570419281765" duration="284000" />
+      <workItem from="1570420365135" duration="17905000" />
+      <workItem from="1570457053754" duration="3050000" />
+      <workItem from="1570466057273" duration="14339000" />
+      <workItem from="1570507472997" duration="833000" />
+      <workItem from="1570524564250" duration="16851000" />
+      <workItem from="1570579325138" duration="903000" />
+      <workItem from="1570586108986" duration="4183000" />
+      <workItem from="1570599088296" duration="7240000" />
+      <workItem from="1570693402441" duration="1125000" />
+      <workItem from="1570695431149" duration="1075000" />
+      <workItem from="1570696606909" duration="2472000" />
+      <workItem from="1570700718839" duration="18781000" />
+      <workItem from="1570736408569" duration="90000" />
+      <workItem from="1570736503186" duration="37000" />
+      <workItem from="1570736544332" duration="20221000" />
+      <workItem from="1570774602043" duration="312000" />
+      <workItem from="1570782900944" duration="561000" />
+      <workItem from="1570888114013" duration="2538000" />
+      <workItem from="1570922660786" duration="82687000" />
+      <workItem from="1571179980663" duration="17736000" />
+      <workItem from="1571218855476" duration="3097000" />
+      <workItem from="1571225349910" duration="9446000" />
+      <workItem from="1571265364890" duration="34146000" />
+      <workItem from="1571368553530" duration="4987000" />
+      <workItem from="1571411760476" duration="1658000" />
+      <workItem from="1571440953912" duration="410000" />
+      <workItem from="1571443204240" duration="3511000" />
+      <workItem from="1571447894170" duration="3958000" />
+      <workItem from="1571452135237" duration="4035000" />
+      <workItem from="1571460115971" duration="650000" />
+      <workItem from="1571461711229" duration="854000" />
+      <workItem from="1571465976919" duration="9772000" />
+      <workItem from="1571519806132" duration="14320000" />
+      <workItem from="1571545530871" duration="2054000" />
+      <workItem from="1571550177904" duration="231000" />
+      <workItem from="1571550523339" duration="2949000" />
+      <workItem from="1571556327485" duration="3940000" />
+      <workItem from="1571562815501" duration="929000" />
+      <workItem from="1571564845457" duration="15730000" />
+      <workItem from="1571611837859" duration="5683000" />
+      <workItem from="1571623364885" duration="828000" />
+      <workItem from="1571644605360" duration="7476000" />
+      <workItem from="1571712754662" duration="67183000" />
+      <workItem from="1571985401250" duration="58087000" />
+      <workItem from="1572213237537" duration="17182000" />
+      <workItem from="1572272653830" duration="43894000" />
+      <workItem from="1572503509537" duration="2926000" />
+      <workItem from="1572522622169" duration="562000" />
+      <workItem from="1572523207665" duration="1401000" />
+      <workItem from="1572533505435" duration="64613000" />
+      <workItem from="1572825346072" duration="6937000" />
+      <workItem from="1572901947090" duration="752000" />
+      <workItem from="1572903040768" duration="384000" />
+      <workItem from="1572906964958" duration="49024000" />
+      <workItem from="1573117375291" duration="37927000" />
+      <workItem from="1573269529628" duration="23420000" />
+      <workItem from="1573850351097" duration="2023000" />
+      <workItem from="1573852725791" duration="6579000" />
+      <workItem from="1574037058901" duration="19119000" />
+      <workItem from="1574379066814" duration="8397000" />
+      <workItem from="1574462772153" duration="849000" />
+      <workItem from="1574469346990" duration="346000" />
+      <workItem from="1574576208061" duration="1158000" />
+      <workItem from="1574643039629" duration="41691000" />
+      <workItem from="1574809257149" duration="1566000" />
+      <workItem from="1574812262681" duration="281000" />
+      <workItem from="1574812553442" duration="424000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

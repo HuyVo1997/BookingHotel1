@@ -1,0 +1,63 @@
+<li th:each="listResult : ${listHotelResult}">
+    <a class="booking-item" th:href="@{hotelDetail/{id}(id=${listResult.hotelid})}" target="_blank">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="booking-item-img-wrap">
+                    <img th:src="'img/' + ${listResult.image}"
+                         alt="Image Alternative text"
+                         title="hotel PORTO BAY RIO INTERNACIONAL de luxe" />
+                    <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>27</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="booking-item-rating">
+                    <ul class="icon-group booking-item-rating-stars"
+                        th:each="star : ${#numbers.sequence(0,4)}">
+
+                        <li th:if="${listResult.rate == 0}">
+                            <i class="fa fa-star-o"></i>
+                        </li>
+
+                        <li th:if="${(star <= listResult.rate - 1) ||
+                                                ((star > listResult.rate - 1 && star - listResult.rate + 1 < 1.1) &&
+                                                ((listResult.rate - 1) * 10) % 10 >= 8)||
+                                                (listResult.rate == 5) ||
+                                                ((listResult.rate == 1 && star < 1)) ||
+                                                (listResult.rate < 1 && star < 1)  && ((listResult.rate * 10) % 10 >= 8)} ">
+                            <i class="fa fa-star"></i>
+                        </li>
+
+                        <li th:if="${(star > listResult.rate - 1 && star - listResult.rate + 1 < 1.1) &&
+                                                (((listResult.rate - 1) * 10) % 10 >= 5 && (((listResult.rate - 1) * 10) % 10 <= 7)) ||
+                                                (listResult.rate < 1 && star < 1)  && ((listResult.rate * 10) % 10 >= 5
+                                                                 && ((listResult.rate * 10) % 10 <= 7))} ">
+                            <i class="fa fa-star-half-empty"></i>
+                        </li>
+
+                        <li th:unless="${listResult.rate == 0 || (star <= listResult.rate - 1) ||
+                                                ((star > listResult.rate - 1 && star - listResult.rate + 1 < 1.1) &&
+                                                ((listResult.rate - 1) * 10) % 10 >= 8)||
+                                                (listResult.rate == 5) ||
+                                                ((listResult.rate == 1 && star < 1)) ||
+                                                (listResult.rate < 1 && star < 1)  && ((listResult.rate * 10) % 10 >= 8) ||
+                                                (star > listResult.rate - 1 && star - listResult.rate + 1 < 1.1) &&
+                                                (((listResult.rate - 1) * 10) % 10 >= 5 && (((listResult.rate - 1) * 10) % 10 <= 7)) ||
+                                                (listResult.rate < 1 && star < 1)  && ((listResult.rate * 10) % 10 >= 5
+                                                                 && ((listResult.rate*10) % 10 <= 7))}">
+                            <i class="fa fa-star-o"></i>
+                        </li>
+                    </ul><span class="booking-item-rating-number"><b th:text="${listResult.rate}">3.7</b> of
+                                                5</span><small>(<span th:text="${listResult.reviews}"></span> reviews)</small>
+                </div>
+                <h5 class="booking-item-title" th:text="${listResult.name}">The London NYC</h5>
+                <p class="booking-item-address"><i class="fa fa-map-marker"></i>
+                    <span th:text="${listResult.location}"></span>
+            </div>
+            <div class="col-md-3">
+                <span class="booking-item-price-from">from</span>
+                <span class="booking-item-price">$<span th:text="${#numbers.formatInteger(listResult.price,1)}"></span></span><span>/night</span>
+                <span class="btn btn-primary">Book Now</span>
+            </div>
+        </div>
+    </a>
+</li>
