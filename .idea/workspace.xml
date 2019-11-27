@@ -72,7 +72,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.EditorConfig" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -251,7 +251,7 @@
       <workItem from="1574643039629" duration="41691000" />
       <workItem from="1574809257149" duration="1566000" />
       <workItem from="1574812262681" duration="281000" />
-      <workItem from="1574812553442" duration="424000" />
+      <workItem from="1574812553442" duration="1390000" />
     </task>
     <servers />
   </component>
