@@ -1,5 +1,6 @@
 package com.bookinghotel.service;
 
+import com.bookinghotel.filter.Encryptor;
 import com.bookinghotel.model.Booking;
 import com.bookinghotel.model.Room;
 import com.bookinghotel.repository.bookingRepository;
@@ -73,12 +74,13 @@ public class PaypalService {
         amount.setTotal(booking.getPrice().toString());
         amount.setCurrency("USD");
         refund.setAmount(amount);
-        Room room = roomService.findRoomById(booking.getRoomid());
+        Room room = roomService.findRoomById(booking.getRoom().getRoomid());
         room.setNumroom(room.getNumroom() + booking.getQuantity());
         booking.setCodetransaction(null);
         booking.setCurrent(0);
-        byte[] decodedBytes = Base64.getDecoder().decode(code);
-        String decodedString = new String(decodedBytes);
+        booking.setSecretkey(null);
+        String decodedString = Encryptor.decrypt(code,booking.getSecretkey());
+        System.out.println(decodedString);
         Sale sale = new Sale();
         sale.setId(decodedString);
         try {

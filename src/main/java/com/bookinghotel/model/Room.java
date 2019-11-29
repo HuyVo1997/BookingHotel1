@@ -38,6 +38,9 @@ public class Room implements Serializable {
     @Column(name="price")
     private Double price;
 
+    @OneToOne(mappedBy = "room")
+    private Booking booking;
+
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="hotelid")
     @JsonIgnore
@@ -184,5 +187,11 @@ public class Room implements Serializable {
         this.roomfootage = roomfootage;
     }
 
+    public Booking getBooking() {
+        return booking;
+    }
 
+    public void setBooking(Booking booking) {
+        this.booking = booking;
+    }
 }

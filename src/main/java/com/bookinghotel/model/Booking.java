@@ -19,8 +19,9 @@ public class Booking {
     @Column(name="userid")
     private Integer userid;
 
-    @Column(name="roomid")
-    private Integer roomid;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "roomid")
+    private Room room;
 
     @Column(name = "title")
     private String title;
@@ -46,14 +47,18 @@ public class Booking {
     @Column(name="codetransaction")
     private String codetransaction;
 
+    @Column(name = "secretkey")
+    private String secretkey;
+
     public Booking() {
     }
 
-    public Booking(String type, Integer userid, Integer roomid, String title, String location, String orderdate,
-                   String executiondate, Double price, Integer current, Integer quantity, String codetransaction) {
+    public Booking(String type, Integer userid, Room room, String title, String location,
+                   String orderdate, String executiondate,
+                   Double price, Integer current, Integer quantity, String codetransaction, String secretkey) {
         this.type = type;
         this.userid = userid;
-        this.roomid = roomid;
+        this.room = room ;
         this.title = title;
         this.location = location;
         this.orderdate = orderdate;
@@ -62,6 +67,7 @@ public class Booking {
         this.current = current;
         this.quantity = quantity;
         this.codetransaction = codetransaction;
+        this.secretkey = secretkey;
     }
 
     public String getCodetransaction() {
@@ -144,19 +150,27 @@ public class Booking {
         this.bookingid = bookingid;
     }
 
-    public Integer getRoomid() {
-        return roomid;
-    }
-
-    public void setRoomid(Integer roomid) {
-        this.roomid = roomid;
-    }
-
     public Integer getQuantity() {
         return quantity;
     }
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public String getSecretkey() {
+        return secretkey;
+    }
+
+    public void setSecretkey(String secretkey) {
+        this.secretkey = secretkey;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 }

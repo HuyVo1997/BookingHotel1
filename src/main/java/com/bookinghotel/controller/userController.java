@@ -4,6 +4,7 @@ import com.bookinghotel.model.Booking;
 import com.bookinghotel.repository.bookingRepository;
 import com.bookinghotel.repository.userRepository;
 import com.bookinghotel.service.bookingService;
+import com.bookinghotel.service.hotelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,6 +24,9 @@ public class userController {
 
     @Autowired
     bookingRepository bookingRepository;
+
+    @Autowired
+    hotelService hotelService;
 
     public void authentication(Model model){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
