@@ -3,7 +3,11 @@ import com.bookinghotel.repository.hotelRepository;
 import com.bookinghotel.repository.roomRepository;
 import com.bookinghotel.repository.userRepository;
 import com.bookinghotel.security.CustomAuthenticationSuccessHandler;
+import com.bookinghotel.service.PaypalService;
 import com.bookinghotel.service.hotelService;
+import com.paypal.api.payments.Amount;
+import com.paypal.api.payments.Refund;
+import com.paypal.api.payments.Sale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -26,6 +30,9 @@ public class homeController {
 
     @Autowired
     roomRepository roomRepository;
+
+    @Autowired
+    PaypalService paypalService;
 
 
     public void authentication(Model model){

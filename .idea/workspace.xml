@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8efa11c-2c4c-4c79-8592-45870056f0de" name="Default Changelist" comment="" />
+    <list default="true" id="e8efa11c-2c4c-4c79-8592-45870056f0de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/controller/PaypalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/controller/PaypalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/controller/homeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/controller/homeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/bookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/bookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/service/PaypalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/service/PaypalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/hotel-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/hotel-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-profile-booking-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-profile-booking-history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/controller/PaypalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/controller/PaypalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/controller/homeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/controller/homeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Booking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/repository/bookingRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/repository/bookingRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/service/PaypalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/service/PaypalService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/hotel-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/hotel-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user-profile-booking-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user-profile-booking-history.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +51,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="JsBowerSettings">
     <node-interpreter value="project" />
@@ -99,6 +116,20 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.BookinghotelApplication">
+    <configuration name="com.bookinghotel.service in BookingHotel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BookingHotel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bookinghotel.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bookinghotel.service" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BookinghotelApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BookingHotel" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bookinghotel.BookinghotelApplication" />
@@ -170,9 +201,15 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.com.bookinghotel.service in BookingHotel" />
       <item itemvalue="Spring Boot.BookinghotelApplication" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.11" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.com.bookinghotel.service in BookingHotel" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -251,7 +288,13 @@
       <workItem from="1574643039629" duration="41691000" />
       <workItem from="1574809257149" duration="1566000" />
       <workItem from="1574812262681" duration="281000" />
-      <workItem from="1574812553442" duration="1390000" />
+      <workItem from="1574812553442" duration="11417000" />
+      <workItem from="1574853574701" duration="5767000" />
+      <workItem from="1574896403432" duration="7931000" />
+      <workItem from="1574958912945" duration="4112000" />
+      <workItem from="1574995467437" duration="713000" />
+      <workItem from="1575002146659" duration="1895000" />
+      <workItem from="1575008638885" duration="788000" />
     </task>
     <servers />
   </component>

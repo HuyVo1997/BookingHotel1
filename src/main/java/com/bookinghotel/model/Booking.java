@@ -19,6 +19,9 @@ public class Booking {
     @Column(name="userid")
     private Integer userid;
 
+    @Column(name="roomid")
+    private Integer roomid;
+
     @Column(name = "title")
     private String title;
 
@@ -37,19 +40,36 @@ public class Booking {
     @Column(name = "current")
     private Integer current;
 
+    @Column(name="quantity")
+    private Integer quantity;
+
+    @Column(name="codetransaction")
+    private String codetransaction;
+
     public Booking() {
     }
 
-    public Booking(String type, Integer userid, String title, String location,
-                   String orderdate, String executiondate, Double price, Integer current) {
+    public Booking(String type, Integer userid, Integer roomid, String title, String location, String orderdate,
+                   String executiondate, Double price, Integer current, Integer quantity, String codetransaction) {
         this.type = type;
         this.userid = userid;
+        this.roomid = roomid;
         this.title = title;
         this.location = location;
         this.orderdate = orderdate;
         this.executiondate = executiondate;
         this.price = price;
         this.current = current;
+        this.quantity = quantity;
+        this.codetransaction = codetransaction;
+    }
+
+    public String getCodetransaction() {
+        return codetransaction;
+    }
+
+    public void setCodetransaction(String codetransaction) {
+        this.codetransaction = codetransaction;
     }
 
     public Integer getUserid() {
@@ -124,4 +144,19 @@ public class Booking {
         this.bookingid = bookingid;
     }
 
+    public Integer getRoomid() {
+        return roomid;
+    }
+
+    public void setRoomid(Integer roomid) {
+        this.roomid = roomid;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
 }

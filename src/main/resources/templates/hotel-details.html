@@ -61,11 +61,12 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <script>
-        $(document).ready(function(){
-
-        });
-    </script>
+    <style>
+        .disable {
+            pointer-events: none;
+            cursor: default;
+        }
+    </style>
     <!-- /FACEBOOK WIDGET -->
     <div class="global-wrap">
         <div class="demo_changer" id="demo_changer">
@@ -831,9 +832,9 @@
                             </form>
                         </div>
                         <div class="gap gap-small"></div>
-                        <ul class="booking-list" >
+                        <ul class="booking-list">
                             <li th:each="room : ${hotelById.rooms}" >
-                                <a class="booking-item" th:href="@{/Payment/{id}(id=${room.roomid})}">
+                                <a class="booking-item" th:href="@{/Payment/{id}(id=${room.roomid})}" th:if="${room.numroom > 0}" >
                                     <div class="row">
                                         <div class="col-md-3">
                                             <img th:src="@{'/img/' + ${room.image}}" alt="Image Alternative text" th:title="${room.title}" />
@@ -870,9 +871,53 @@
                                             <span th:text="${#numbers.formatInteger(room.price,1)}"></span>
                                         </span></span><span>/night</span><span class="btn btn-primary">Book</span>
                                         </div>
-                                        <div style="margin-top: 100px">
+                                        <div style="margin-top: 120px">
                                             <h5>
                                                 Guaranteed : <span th:text="${room.numroom}"></span> rooms left
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="booking-item disable" th:href="@{/Payment/{id}(id=${room.roomid})}" th:if="${room.numroom == 0}">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img th:src="@{'/img/' + ${room.image}}" alt="Image Alternative text" th:title="${room.title}" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h5 class="booking-item-title" th:text="${room.typeroom.type}">Family Suite</h5>
+                                            <p class="text-small" th:text="${room.description}"></p>
+                                            <ul class="booking-item-features booking-item-features-sign clearfix">
+                                                <li rel="tooltip" data-placement="top" title="Adults Occupancy">
+                                                    <i class="fa fa-male"></i>
+                                                    <span class="booking-item-feature-sign">x <span th:text="${room.numofadults}"></span></span>
+                                                </li>
+                                                <li rel="tooltip" data-placement="top" title="Children Occupancy" th:if="${room.numofchild != null}">
+                                                    <i class="im im-children"></i><span class="booking-item-feature-sign">x
+                                                    <span th:text="${room.numofchild}"></span></span>
+                                                </li>
+                                                <li rel="tooltip" data-placement="top" title="Beds">
+                                                    <i class="im im-bed"></i><span class="booking-item-feature-sign">x
+                                                    <span th:text="${room.numofbed}"></span></span>
+                                                </li>
+                                                <li rel="tooltip" data-placement="top" title="Room footage (square feet)">
+                                                    <i class="im im-width"></i>
+                                                    <span class="booking-item-feature-sign" th:text="${room.roomfootage}">450</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="booking-item-features booking-item-features-small clearfix" >
+                                                <th:block th:each="service : ${room.roomservices}">
+                                                    <li rel="tooltip" data-placement="top" th:title="${service.name}"><i th:class="${service.image}"></i>
+                                                    </li>
+                                                </th:block>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3"><span class="booking-item-price">$
+                                            <span th:text="${#numbers.formatInteger(room.price,1)}"></span>
+                                        </span></span><span>/night</span><span class="btn btn-primary">Book</span>
+                                        </div>
+                                        <div style="margin-top: 120px">
+                                            <h5>
+                                                Out Of Room
                                             </h5>
                                         </div>
                                     </div>

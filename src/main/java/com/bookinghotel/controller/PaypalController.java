@@ -1,18 +1,14 @@
 package com.bookinghotel.controller;
 
 import com.bookinghotel.model.Booking;
-import com.bookinghotel.model.Hotel;
 import com.bookinghotel.model.Room;
 import com.bookinghotel.model.User;
-import com.bookinghotel.repository.bookingRepository;
-import com.bookinghotel.repository.roomRepository;
 import com.bookinghotel.repository.userRepository;
 import com.bookinghotel.service.PaypalService;
 import com.bookinghotel.service.bookingService;
 import com.bookinghotel.service.hotelService;
 import com.bookinghotel.service.roomService;
-import com.paypal.api.payments.Links;
-import com.paypal.api.payments.Payment;
+import com.paypal.api.payments.*;
 import com.paypal.base.rest.PayPalRESTException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -20,6 +16,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Base64;
 
 @Controller
 public class PaypalController {
@@ -81,15 +79,15 @@ public class PaypalController {
                              @RequestParam("PayerID") String payerId,
                              Model model){
         Room room = roomService.findRoomById(hotelController.roomId);
-        Hotel hotel = hotelService.findHotelById(hotelController.hotelId);
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String email = auth.getName();
         User user = userRepository.findUserByEmail(email);
         try {
             authentication(model);
             Payment payment = paypalService.excutePayment(paymentId,payerId);
-            Booking booking = new Booking("hotel",user.getUserid(),room.getTyperoom().getType(),hotelController.locationText,
-                    hotelController.dateStart,hotelController.dateEnd,priceTotal,1);
+            String saleid = Base64.getEncoder().encodeToString(payment.getTransactions().get(0).getRelatedResources().get(0).getSale().getId().getBytes());
+            Booking booking = new Booking("hotel",user.getUserid(),room.getRoomid(),room.getTyperoom().getType(),hotelController.locationText,
+                    hotelController.dateStart,hotelController.dateEnd,priceTotal,1,numRoom, saleid);
             bookingService.saveBooking(booking);
             room.setNumroom(room.getNumroom() - numRoom);
             roomService.updateRoom(room);
@@ -101,6 +99,12 @@ public class PaypalController {
         catch (PayPalRESTException e){
             System.out.println(e.getMessage());
         }
+        return "redirect:/";
+    }
+
+    @RequestMapping(value="/refund/{id}",method = RequestMethod.GET)
+    public String refundPay(@PathVariable String id) throws PayPalRESTException {
+        paypalService.refund(id);
         return "redirect:/";
     }
 }
