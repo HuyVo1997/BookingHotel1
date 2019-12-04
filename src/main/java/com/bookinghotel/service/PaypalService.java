@@ -75,18 +75,17 @@ public class PaypalService {
         amount.setCurrency("USD");
         refund.setAmount(amount);
         Room room = roomService.findRoomById(booking.getRoom().getRoomid());
-        room.setNumroom(room.getNumroom() + booking.getQuantity());
-        booking.setCodetransaction(null);
-        booking.setCurrent(0);
-        booking.setSecretkey(null);
         String decodedString = Encryptor.decrypt(code,booking.getSecretkey());
-        System.out.println(decodedString);
         Sale sale = new Sale();
         sale.setId(decodedString);
         try {
             // Refund sale
             sale.refund(apiContext, refund);
+            room.setNumroom(room.getNumroom() + booking.getQuantity());
             roomService.updateRoom(room);
+            booking.setCodetransaction(null);
+            booking.setCurrent(0);
+            booking.setSecretkey(null);
             bookingService.saveBooking(booking);
         } catch (PayPalRESTException e) {
             System.err.println(e.getDetails());

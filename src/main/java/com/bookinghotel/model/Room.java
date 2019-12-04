@@ -38,8 +38,8 @@ public class Room implements Serializable {
     @Column(name="price")
     private Double price;
 
-    @OneToOne(mappedBy = "room")
-    private Booking booking;
+    @OneToMany(mappedBy ="room",fetch = FetchType.LAZY)
+    private Set<Booking> booking;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="hotelid")
@@ -52,16 +52,18 @@ public class Room implements Serializable {
             joinColumns = @JoinColumn(name = "roomid"),
             inverseJoinColumns = @JoinColumn(name = "serviceid")
     )
-
     private Set<Service> roomservices;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name= "typeid")
     @JsonIgnore
     private TypeRoom typeroom;
 
     @Column(name = "numroom")
     private Integer numroom;
+
+    @Column(name="refund")
+    private Integer refund;
 
     public Integer getNumroom() {
         return numroom;
@@ -82,9 +84,10 @@ public class Room implements Serializable {
         this.roomservices = roomservices;
     }
 
-    public Room(String image, String description, String title, Integer numofadults, Integer numofchild,
-                Integer numofbed, Integer roomfootage,
-                Double price, Hotel hotel, Set<Service> roomservices, TypeRoom typeroom, Integer numroom) {
+    public Room(String image, String description, String title, Integer numofadults,
+                Integer numofchild, Integer numofbed, Integer roomfootage, Double price,
+                Set<Booking> booking, Hotel hotel,
+                Set<Service> roomservices, TypeRoom typeroom, Integer numroom, Integer refund) {
         this.image = image;
         this.description = description;
         this.title = title;
@@ -93,10 +96,12 @@ public class Room implements Serializable {
         this.numofbed = numofbed;
         this.roomfootage = roomfootage;
         this.price = price;
+        this.booking = booking;
         this.hotel = hotel;
         this.roomservices = roomservices;
         this.typeroom = typeroom;
         this.numroom = numroom;
+        this.refund = refund;
     }
 
     public Hotel getHotel() {
@@ -187,11 +192,19 @@ public class Room implements Serializable {
         this.roomfootage = roomfootage;
     }
 
-    public Booking getBooking() {
+    public Set<Booking> getBooking() {
         return booking;
     }
 
-    public void setBooking(Booking booking) {
+    public void setBooking(Set<Booking> booking) {
         this.booking = booking;
+    }
+
+    public Integer getRefund() {
+        return refund;
+    }
+
+    public void setRefund(Integer refund) {
+        this.refund = refund;
     }
 }

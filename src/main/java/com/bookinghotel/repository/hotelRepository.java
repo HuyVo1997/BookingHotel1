@@ -1,5 +1,6 @@
 package com.bookinghotel.repository;
 
+import com.bookinghotel.model.Bussiness;
 import com.bookinghotel.model.Hotel;
 import com.bookinghotel.model.Room;
 import com.bookinghotel.model.Service;
@@ -34,4 +35,6 @@ public interface hotelRepository extends JpaRepository<Hotel,Integer>{
                                 @Param("price") Double price,
                                 @Param("star") List<Integer> star,
                                 @Param("hservice") List<String> hservice);
+
+        List<Hotel> findHotelsByBussiness(Bussiness bussiness);
 }

@@ -17,9 +17,6 @@ public class CustomLogoutSuccessHandler extends
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse
             response, Authentication authentication)
             throws IOException, ServletException {
-        if (authentication != null) {
-            System.out.println(authentication.getName());
-        }
         response.setStatus(HttpStatus.OK.value());
         response.sendRedirect(request.getHeader("referer"));
     }

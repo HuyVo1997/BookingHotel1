@@ -19,7 +19,7 @@ public class Booking {
     @Column(name="userid")
     private Integer userid;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "roomid")
     private Room room;
 
@@ -53,12 +53,12 @@ public class Booking {
     public Booking() {
     }
 
-    public Booking(String type, Integer userid, Room room, String title, String location,
-                   String orderdate, String executiondate,
+    public Booking(String type, Integer userid, Room room, String title,
+                   String location, String orderdate, String executiondate,
                    Double price, Integer current, Integer quantity, String codetransaction, String secretkey) {
         this.type = type;
         this.userid = userid;
-        this.room = room ;
+        this.room = room;
         this.title = title;
         this.location = location;
         this.orderdate = orderdate;

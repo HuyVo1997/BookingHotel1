@@ -83,7 +83,6 @@ public class PaypalController {
                              @RequestParam("PayerID") String payerId,
                              Model model){
         Room room = roomService.findRoomById(hotelController.roomId);
-        Hotel hotel = hotelService.findHotelById(hotelController.hotelId);
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String email = auth.getName();
         User user = userRepository.findUserByEmail(email);
@@ -95,7 +94,7 @@ public class PaypalController {
             Payment payment = paypalService.excutePayment(paymentId,payerId);
             String saleid = Encryptor.encrypt(payment.getTransactions().get(0).getRelatedResources().get(0).getSale().getId(),secretKey);
             Booking booking;
-            if(hotel.getRefund() == 1){
+            if(room.getRefund() == 1){
                 booking = new Booking("hotel",user.getUserid(),room,room.getTyperoom().getType(),hotelController.locationText,
                         hotelController.dateStart,hotelController.dateEnd,priceTotal,1,numRoom, saleid, secretKey);
             }

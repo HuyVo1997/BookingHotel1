@@ -1,4 +1,5 @@
 package com.bookinghotel.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreType;
 import org.springframework.security.core.Transient;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,8 +32,6 @@ public class Hotel implements Serializable {
     private Double rate;
     @Column(name="star")
     private Integer star;
-    @Column(name="refund")
-    private Integer refund;
 
     @OneToMany(mappedBy = "hotel",fetch=FetchType.LAZY)
     private Set<Room> rooms;
@@ -45,8 +44,16 @@ public class Hotel implements Serializable {
     )
     private Set<Service> hotelservices;
 
-    public Hotel(String name, String location, Double price, String image, Integer reviews, Double rate,
-                 Integer star, Integer refund, Set<Room> rooms, Set<Service> hotelservices) {
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="bussinessid")
+    private Bussiness bussiness;
+
+    @Column(name = "status")
+    private Integer status;
+
+    public Hotel(String name, String location, Double price, String image, Integer reviews,
+                 Double rate, Integer star,
+                 Set<Room> rooms, Set<Service> hotelservices, Bussiness bussiness, Integer status) {
         this.name = name;
         this.location = location;
         this.price = price;
@@ -54,9 +61,10 @@ public class Hotel implements Serializable {
         this.reviews = reviews;
         this.rate = rate;
         this.star = star;
-        this.refund = refund;
         this.rooms = rooms;
         this.hotelservices = hotelservices;
+        this.bussiness = bussiness;
+        this.status = status;
     }
 
     public Hotel(){}
@@ -141,12 +149,20 @@ public class Hotel implements Serializable {
         this.star = star;
     }
 
-    public Integer getRefund() {
-        return refund;
+    public Bussiness getBussiness() {
+        return bussiness;
     }
 
-    public void setRefund(Integer refund) {
-        this.refund = refund;
+    public void setBussiness(Bussiness bussiness) {
+        this.bussiness = bussiness;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     //    @Column(name="generate")
