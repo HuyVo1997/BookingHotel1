@@ -1010,79 +1010,73 @@
 											here</li>
 									</ul>
 								</div>
-								<div class="card-body row">
-									<div class="col-lg-6 p-t-20">
-										<div
-												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="text" id="txtFirstName" name="nameHotel">
-											<label class="mdl-textfield__label">Name Hotel</label>
-										</div>
-									</div>
-									<div class="col-lg-6 p-t-20">
-										<div
-												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="text"
-												   pattern="-?[0-9]*(\.[0-9]+)?" name="price">
-											<label class="mdl-textfield__label">Price</label>
-											<span class="mdl-textfield__error">Number required!</span>
-										</div>
-									</div>
-									<div class="col-lg-6 p-t-20">
-										<div
-												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="email" id="txtemail" name="email">
-											<label class="mdl-textfield__label">Email</label>
-											<span class="mdl-textfield__error">Enter Valid Email Address!</span>
-										</div>
-									</div>
-
-									<div class="col-lg-6 p-t-20">
-										<div
-												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="text"
-												   pattern="-?[0-9]*(\.[0-9]+)?" id="text5">
-											<label class="mdl-textfield__label" for="text5" name="phone">Mobile Number</label>
-											<span class="mdl-textfield__error">Number required!</span>
-										</div>
-									</div>
-									<div class="col-lg-6 p-t-20">
-										<div
-												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="text" id="txtCity" name="city">
-											<label class="mdl-textfield__label">City</label>
-										</div>
-									</div>
-									<div class="col-lg-6 p-t-20">
-										<div
-												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="text" id="txtProvince" name="province">
-											<label class="mdl-textfield__label">Province</label>
-										</div>
-									</div>
-									<div class="col-lg-12 p-t-20">
-										<div class="mdl-textfield mdl-js-textfield txt-full-width">
-											<textarea class="mdl-textfield__input" rows="4" id="text7" name="address"></textarea>
-											<label class="mdl-textfield__label" for="text7">Address</label>
-										</div>
-									</div>
-									<div class="col-lg-12 p-t-20">
-										<label class="control-label col-md-3">Upload Photo</label>
-										<form id="id_dropzone" class="dropzone">
-											<div class="dz-message">
-												<div class="dropIcon">
-													<i class="material-icons">cloud_upload</i>
-												</div>
-												<h3>Drop files here or click to upload.</h3>
+								<form action="/add-hotel" method="post">
+									<div class="card-body row">
+										<div class="col-lg-6 p-t-20">
+											<div
+													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input class="mdl-textfield__input" type="text" id="txtNameHotel" name="nameHotel">
+												<label class="mdl-textfield__label">Name Hotel</label>
 											</div>
-										</form>
+										</div>
+										<div class="col-lg-6 p-t-20">
+											<div
+													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input class="mdl-textfield__input" type="text"
+													   pattern="-?[0-9]*(\.[0-9]+)?" name="price" id="txtPrice">
+												<label class="mdl-textfield__label">Price</label>
+												<span class="mdl-textfield__error">Number required!</span>
+											</div>
+										</div>
+										<div class="col-lg-6 p-t-20">
+											<div
+													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input class="mdl-textfield__input" type="email" id="txtEmail" name="email">
+												<label class="mdl-textfield__label">Email</label>
+												<span class="mdl-textfield__error">Enter Valid Email Address!</span>
+											</div>
+										</div>
+										<div class="col-lg-6 p-t-20">
+											<div
+													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input class="mdl-textfield__input" type="text"
+													   pattern="-?[0-9]*(\.[0-9]+)?" id="text5" name="phone">
+												<label class="mdl-textfield__label" for="text5" id="txtPhone">Mobile Number</label>
+												<span class="mdl-textfield__error">Number required!</span>
+											</div>
+										</div>
+										<div class="col-lg-6 p-t-20">
+											<div
+													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input class="mdl-textfield__input" type="text" id="txtCity" name="city">
+												<label class="mdl-textfield__label">City</label>
+											</div>
+										</div>
+										<div class="col-lg-6 p-t-20">
+											<div
+													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input class="mdl-textfield__input" type="text" id="txtProvince" name="province">
+												<label class="mdl-textfield__label">Province</label>
+											</div>
+										</div>
+										<div class="col-lg-12 p-t-20">
+											<div class="mdl-textfield mdl-js-textfield txt-full-width">
+												<textarea class="mdl-textfield__input" rows="4" id="text7" name="address"></textarea>
+												<label class="mdl-textfield__label" for="text7">Address</label>
+											</div>
+										</div>
+										<div class="col-lg-12 p-t-20">
+											<label class="control-label col-md-3">Upload Photo</label>
+											<p id="id_dropzone" class="dropzone"></p>
+										</div>
+										<div class="col-lg-12 p-t-20 text-center">
+											<button type="submit"
+													class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Submit</button>
+											<button type="button"
+													class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
+										</div>
 									</div>
-									<div class="col-lg-12 p-t-20 text-center">
-										<button type="button"
-												class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Submit</button>
-										<button type="button"
-												class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
-									</div>
-								</div>
+								</form>
 							</div>
 						</div>
 					</div>

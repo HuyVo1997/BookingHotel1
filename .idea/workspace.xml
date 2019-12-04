@@ -2,289 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8efa11c-2c4c-4c79-8592-45870056f0de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/bussiness/bussinessController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Bussiness.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/bussinessRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/service/bussinessService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/serviceimplement/bussinessServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/material_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/pages/animate_page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/pages/extra_pages.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/pages/formlayout.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/pages/inbox.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/pages/pricing.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/pages/steps.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/pages/timeline.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/pages/typography.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/plugins.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/responsive.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/theme-color.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/bg-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/blog/blog1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/blog/blog2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/blog/blog3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/blog/blog4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/datatable-row-openclose.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/dp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/image-gallery/thumb/thumb-9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/invoice_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/mega-img1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/mega-img2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/mega-img3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/fullimage1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/fullimage2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/fullimage3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/owl1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/owl2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/owl3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/owl4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/owl5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/owl6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/owl7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/owl8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/slider1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/slider2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/slider/slider3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/user1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/user10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/user2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/user3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/user4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/user5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/user6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/user7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/user8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/user9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/usrbig1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/usrbig2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/usrbig3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/usrbig4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/usrbig5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/usrbig6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/usrbig7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/usrbig8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/user/usrbig9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/vehicle/v1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/vehicle/v2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/vehicle/v3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/vehicle/v4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/vehicle/v5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/vehicle/v6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/calendar/calendar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/chart/chartjs/chartjs-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/chart/chartjs/home-data2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/chart/echart/echart-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/chart/morris/morris_chart_data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/chart/morris/morris_home_data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/datetime/datetime-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/extra_pages/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/map/google-maps-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/map/vector-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/material-loading/material-loading.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/material_select/getmdl-select.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/owl-carousel/owl_data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/select2/select2-init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/sparkline/sparkline-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/steps/steps-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/summernote/summernote-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/sweet-alert/sweet-alert-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/table/editable_table_data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/table/table_data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/timeline/timeline.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/treeview/treeview-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/ui/animations.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/validation/form-validation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/theme-color.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-colorpicker/img/bootstrap-colorpicker/alpha-horizontal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-colorpicker/img/bootstrap-colorpicker/alpha.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-colorpicker/img/bootstrap-colorpicker/hue-horizontal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-colorpicker/img/bootstrap-colorpicker/hue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-colorpicker/img/bootstrap-colorpicker/saturation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker-init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker-init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-editable/bootstrap-editable/css/bootstrap-editable.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-editable/bootstrap-editable/img/clear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-editable/bootstrap-editable/img/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-editable/inputs-ext/address/address.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap-treeview/bootstrap-treeview.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/chart-js/Chart.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/chart-js/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/counterup/jquery.counterup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/counterup/jquery.waypoints.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/datatables/editabletable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/datatables/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/dropzone/dropzone-call.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/dropzone/dropzone.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/dropzone/dropzone.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/echarts/echarts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/flatpicker/flatpickr.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/flatpicker/flatpickr.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/font-awesome/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/font-awesome/fonts/fontawesome-webfontd41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/fullcalendar/fullcalendar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/fullcalendar/fullcalendar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/gmaps/gmaps.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/iconic/css/material-design-iconic-font.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/iconic/fonts/Material-Design-Iconic-Fontd1f1.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/iconic/fonts/Material-Design-Iconic-Fontd1f1.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/iconic/fonts/Material-Design-Iconic-Fontd1f1.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-blockui/jquery.blockui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-file-upload/css/jquery.fileupload.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-file-upload/img/error-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-file-upload/img/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-file-upload/img/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-file-upload/img/play-pause-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-file-upload/img/play-pause.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-file-upload/img/progressbar.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-file-upload/img/video-play-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-file-upload/img/video-play.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-tags-input/jquery-tags-input-init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-tags-input/jquery-tags-input.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-tags-input/jquery-tags-input.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-toast/dist/jquery.toast.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-toast/dist/jquery.toast.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-toast/dist/toast.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-ui/jquery-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-validation/js/additional-methods.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery-validation/js/jquery.validate.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jqvmap/data/jquery.vmap.sampledata.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jqvmap/jquery.vmap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jqvmap/jqvmap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jqvmap/maps/jquery.vmap.europe.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jqvmap/maps/jquery.vmap.germany.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jqvmap/maps/jquery.vmap.russia.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jqvmap/maps/jquery.vmap.usa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/jqvmap/maps/jquery.vmap.world.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/light-gallery/css/lightgallery.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/light-gallery/fonts/lg.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/light-gallery/fonts/lg.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/light-gallery/fonts/lg.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/light-gallery/fonts/lg.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/light-gallery/fonts/lgd41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/light-gallery/img/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/light-gallery/img/video-play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/light-gallery/img/vimeo-play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/light-gallery/img/youtube-play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/light-gallery/js/image-gallery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/light-gallery/js/lightgallery-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/material-icons/iconfont/MaterialIcons-Regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/material-icons/iconfont/MaterialIcons-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/material-icons/iconfont/MaterialIcons-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/material-icons/iconfont/MaterialIcons-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/material/material.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/material/material.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/modernizr/modernizr.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/moment/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/morris/morris.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/morris/morris.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/morris/raphael-min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/owl-carousel/AjaxLoader.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/owl-carousel/grabbing.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/owl-carousel/owl.carousel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/owl-carousel/owl.carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/owl-carousel/owl.theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/popper/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/select2/css/select2-bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/select2/css/select2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/select2/js/select2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/simple-line-icons/fonts/Simple-Line-Iconsb26c.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/simple-line-icons/fonts/Simple-Line-Iconsb26c.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/simple-line-icons/fonts/Simple-Line-Iconsb26c.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/simple-line-icons/fonts/Simple-Line-Iconsb26c.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/simple-line-icons/fonts/Simple-Line-Iconsb26c.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/simple-line-icons/simple-line-icons.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/sparkline/jquery.sparkline.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/steps/jquery.steps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/summernote/font/summernote291f.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/summernote/font/summernote291f.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/summernote/font/summernote291f.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/summernote/font/summernoted41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/summernote/summernote.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/summernote/summernote.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/sweet-alert/sweetalert.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plugins/sweet-alert/sweetalert.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/add_room.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index-bussiness.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/new_booking.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/sign_up.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/view_booking.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/typeroomRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/service/typeroomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/serviceimplement/typeroomServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/addhotel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/controller/PaypalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/controller/PaypalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/bussiness/bussinessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/bussiness/bussinessController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/hotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/hotelRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/security/CustomLogoutSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/security/CustomLogoutSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/security/securityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/security/securityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/service/PaypalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/service/PaypalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login-register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-profile-booking-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-profile-booking-history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/controller/PaypalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/controller/PaypalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Booking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add_room.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add_room.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index-bussiness.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index-bussiness.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/new_booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/new_booking.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Hotel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/repository/hotelRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/repository/hotelRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/security/CustomLogoutSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/security/CustomLogoutSuccessHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/security/securityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/security/securityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/service/PaypalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/service/PaypalService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login-register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user-profile-booking-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user-profile-booking-history.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -565,7 +293,7 @@
       <workItem from="1575008638885" duration="12472000" />
       <workItem from="1575107081315" duration="3290000" />
       <workItem from="1575127027373" duration="3456000" />
-      <workItem from="1575271757766" duration="38883000" />
+      <workItem from="1575271757766" duration="54020000" />
     </task>
     <task id="LOCAL-00001" summary="Update Refund">
       <created>1575009753084</created>
@@ -588,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575070326938</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add Bussiness Page">
+      <created>1575432082798</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575432082798</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,6 +344,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Refund" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Refund" />
+    <MESSAGE value="Add Bussiness Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Bussiness Page" />
   </component>
 </project>

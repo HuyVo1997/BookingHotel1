@@ -1,10 +1,15 @@
 package com.bookinghotel.bussiness;
 
 import com.bookinghotel.model.Bussiness;
+import com.bookinghotel.model.Hotel;
+import com.bookinghotel.model.Room;
+import com.bookinghotel.model.TypeRoom;
 import com.bookinghotel.repository.bussinessRepository;
 import com.bookinghotel.repository.hotelRepository;
 import com.bookinghotel.service.bussinessService;
 import com.bookinghotel.service.hotelService;
+import com.bookinghotel.service.roomService;
+import com.bookinghotel.service.typeroomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -26,6 +31,15 @@ public class bussinessController {
 
     @Autowired
     hotelRepository hotelRepository;
+
+    @Autowired
+    typeroomService typeroomService;
+
+    @Autowired
+    hotelService hotelService;
+
+    @Autowired
+    roomService roomService;
 
     public String statusLogin(HttpSession session,String page){
         if(session.getAttribute("statusLogin") != null){
@@ -84,7 +98,7 @@ public class bussinessController {
     }
 
     @RequestMapping("/bussiness/add-hotel")
-    public String addHotel(HttpSession session){
+    public String pageAddHotel(HttpSession session){
         return statusLogin(session,"new_booking");
     }
 
@@ -95,5 +109,64 @@ public class bussinessController {
         return "view_booking";
     }
 
+    @RequestMapping(value="/add-hotel",method = RequestMethod.POST)
+    public String addHotel(HttpSession session,
+                           @RequestParam("nameHotel") String name,
+                           @RequestParam("price") Double price,
+                           @RequestParam("email") String email,
+                           @RequestParam("phone") String phone,
+                           @RequestParam("city") String city,
+                           @RequestParam("province") String province,
+                           @RequestParam("address") String address){
+        Hotel hotel = new Hotel();
+        Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
+        hotel.setName(name);
+        hotel.setPrice(price);
+        hotel.setEmail(email);
+        hotel.setPhone(phone);
+        hotel.setLocation(address + ", " + city + ", " + province);
+        hotel.setStatus(0);
+        hotel.setBussiness(bussiness);
+        hotelRepository.save(hotel);
+        return "redirect:/bussiness/view-hotel";
+    }
 
+
+    @RequestMapping("/bussiness/add-room")
+    public String pageAddRoom(HttpSession session,Model model){
+        Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
+        model.addAttribute("listHotel",hotelRepository.findHotelsByBussiness(bussiness));
+        model.addAttribute("listTypeRoom",typeroomService.getAllTypeRooms());
+        return "add_room";
+    }
+
+    @RequestMapping(value="/add-room",method = RequestMethod.POST)
+    public String addRoom(HttpSession session,
+                           @RequestParam("hotelid") Integer hotelid,
+                           @RequestParam("description") String description,
+                           @RequestParam("typeroom") Integer typeroom,
+                           @RequestParam("refund") Integer cancle,
+                           @RequestParam("numadult") Integer numadult,
+                           @RequestParam("numchild") Integer numchild,
+                           @RequestParam("numbed") Integer numbed,
+                           @RequestParam("numroom") Integer numroom,
+                           @RequestParam("price") Double price,
+                           @RequestParam("roomfootage") Integer roomfootage){
+
+        Hotel hotel = hotelService.findHotelById(hotelid);
+        TypeRoom typeRoom = typeroomService.findTypeRoomById(typeroom);
+        Room room = new Room();
+        room.setDescription(description);
+        room.setRefund(cancle);
+        room.setNumofadults(numadult);
+        room.setNumofchild(numchild);
+        room.setNumofbed(numbed);
+        room.setNumroom(numroom);
+        room.setPrice(price);
+        room.setRoomfootage(roomfootage);
+        room.setHotel(hotel);
+        room.setTyperoom(typeRoom);
+        roomService.updateRoom(room);
+        return "redirect:/bussiness/add-room";
+    }
 }

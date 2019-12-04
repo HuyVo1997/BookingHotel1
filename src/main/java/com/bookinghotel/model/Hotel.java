@@ -32,6 +32,10 @@ public class Hotel implements Serializable {
     private Double rate;
     @Column(name="star")
     private Integer star;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "phone")
+    private String phone;
 
     @OneToMany(mappedBy = "hotel",fetch=FetchType.LAZY)
     private Set<Room> rooms;
@@ -52,8 +56,8 @@ public class Hotel implements Serializable {
     private Integer status;
 
     public Hotel(String name, String location, Double price, String image, Integer reviews,
-                 Double rate, Integer star,
-                 Set<Room> rooms, Set<Service> hotelservices, Bussiness bussiness, Integer status) {
+                 Double rate, Integer star, String email, String phone, Set<Room> rooms,
+                 Set<Service> hotelservices, Bussiness bussiness, Integer status) {
         this.name = name;
         this.location = location;
         this.price = price;
@@ -61,6 +65,8 @@ public class Hotel implements Serializable {
         this.reviews = reviews;
         this.rate = rate;
         this.star = star;
+        this.email = email;
+        this.phone = phone;
         this.rooms = rooms;
         this.hotelservices = hotelservices;
         this.bussiness = bussiness;
@@ -152,7 +158,6 @@ public class Hotel implements Serializable {
     public Bussiness getBussiness() {
         return bussiness;
     }
-
     public void setBussiness(Bussiness bussiness) {
         this.bussiness = bussiness;
     }
@@ -163,6 +168,22 @@ public class Hotel implements Serializable {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     //    @Column(name="generate")
