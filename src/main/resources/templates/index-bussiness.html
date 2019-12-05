@@ -344,6 +344,13 @@
 									</li>
 								</ul>
 							</li>
+							<li class="nav-item" th:if="${isAdmin == 'ROLE_ADMIN'}">
+								<a th:href="@{/bussiness/pending}" class="nav-link nav-toggle">
+									<i class="material-icons">cached</i>
+									<span class="title">Hotel Pending</span>
+									<span class="arrow"></span>
+								</a>
+							</li>
 							<li class="nav-item">
 								<a href="#" class="nav-link nav-toggle">
 									<i class="material-icons">business_center</i>
@@ -358,12 +365,12 @@
 									</li>
 									<li class="nav-item">
 										<a th:href="@{/bussiness/view-hotel}" class="nav-link ">
-											<span class="title">View Booking</span>
+											<span class="title">View Hotel</span>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="edit_booking.html" class="nav-link ">
-											<span class="title">Edit Booking</span>
+										<a th:href="@{/bussiness/hotel-service}" class="nav-link ">
+											<span class="title">Add Hotel Service</span>
 										</a>
 									</li>
 								</ul>

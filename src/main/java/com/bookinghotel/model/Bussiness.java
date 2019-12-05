@@ -22,7 +22,7 @@ public class Bussiness {
 
     @ManyToMany
     @JoinTable(
-            name = "user_role",
+            name = "bussiness_role",
             joinColumns = @JoinColumn(name = "bussinessid"),
             inverseJoinColumns = @JoinColumn(name = "roleid")
     )

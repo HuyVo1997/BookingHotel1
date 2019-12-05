@@ -1,4 +1,4 @@
-<li th:each="listResult : ${listHotelResult}">
+<li th:each="listResult : ${listHotelResult}" th:if="${listResult.status == 1}">
     <a class="booking-item" th:href="@{hotelDetail/{id}(id=${listResult.hotelid})}" target="_blank">
         <div class="row">
             <div class="col-md-3">

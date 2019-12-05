@@ -20,13 +20,15 @@ public class Role implements Serializable {
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
+    @ManyToMany(mappedBy = "roles")
+    private Set<Bussiness> Bussiness;
+
     public Role() {
     }
 
     public Role(String name) {
         this.name = name;
     }
-
 
     public String getName() {
         return name;
@@ -50,5 +52,13 @@ public class Role implements Serializable {
 
     public void setRoleid(int roleid) {
         this.roleid = roleid;
+    }
+
+    public Set<com.bookinghotel.model.Bussiness> getBussiness() {
+        return Bussiness;
+    }
+
+    public void setBussiness(Set<com.bookinghotel.model.Bussiness> bussiness) {
+        Bussiness = bussiness;
     }
 }
