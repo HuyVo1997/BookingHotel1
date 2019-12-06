@@ -37,4 +37,5 @@ public interface hotelRepository extends JpaRepository<Hotel,Integer>{
                                 @Param("hservice") List<String> hservice);
 
         List<Hotel> findHotelsByBussiness(Bussiness bussiness);
+
 }

@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8efa11c-2c4c-4c79-8592-45870056f0de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/serviceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/view_pending.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/all_rooms.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/update_hotel.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/bussiness/bussinessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/bussiness/bussinessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Bussiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Bussiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/hotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/hotelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/serviceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/serviceRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add_room.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add_room.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index-bussiness.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index-bussiness.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/new_booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/new_booking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/star.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/star.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/view_booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/view_booking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/star.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/star.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,15 +88,15 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/src/main/resources/static/img/imgroom" />
       <recent name="$PROJECT_DIR$/src/main/resources/static/css" />
       <recent name="$PROJECT_DIR$/src/main/resources/static/img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -297,7 +293,8 @@
       <workItem from="1575008638885" duration="12472000" />
       <workItem from="1575107081315" duration="3290000" />
       <workItem from="1575127027373" duration="3456000" />
-      <workItem from="1575271757766" duration="76388000" />
+      <workItem from="1575271757766" duration="77168000" />
+      <workItem from="1575542578931" duration="24948000" />
     </task>
     <task id="LOCAL-00001" summary="Update Refund">
       <created>1575009753084</created>
@@ -334,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575470905308</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add Hotel And Room For Bussiness">
+      <created>1575520441237</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575520441237</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,6 +360,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Refund" />
     <MESSAGE value="Add Bussiness Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Bussiness Page" />
+    <MESSAGE value="Add Hotel And Room For Bussiness" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Hotel And Room For Bussiness" />
   </component>
 </project>

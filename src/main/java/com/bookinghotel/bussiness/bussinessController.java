@@ -17,10 +17,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.servlet.http.HttpSession;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 
 @Controller
@@ -47,13 +51,11 @@ public class bussinessController {
     @Autowired
     serviceRepository serviceRepository;
 
-    public String statusLogin(HttpSession session,String page){
-        if(session.getAttribute("statusLogin") != null){
-            return page;
+    public String statusLogin(HttpSession session){
+        if(session.getAttribute("statusLogin") == null){
+            return "redirect:/bussiness/login";
         }
-        else {
-            return "login";
-        }
+        return null;
     }
 
     public String checkAdmin(HttpSession session){
@@ -64,7 +66,7 @@ public class bussinessController {
 
     @RequestMapping("/bussiness/login")
     public String login(HttpSession session){
-        return statusLogin(session,"/bussiness/login");
+        return "login";
     }
 
     @RequestMapping("/bussiness/register")
@@ -134,7 +136,9 @@ public class bussinessController {
                            @RequestParam("city") String city,
                            @RequestParam("province") String province,
                            @RequestParam("address") String address,
-                           @RequestParam(value = "hservice") Integer[] hservice){
+                           @RequestParam(value = "hservice") Integer[] hservice,
+                           @RequestParam("file") MultipartFile file){
+        String UPLOADED_FOLDER = "/Users/huyvo/Documents/Web/BookingHotel/src/main/resources/static/img/hotel/";
         Hotel hotel = new Hotel();
         Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
         hotel.setName(name);
@@ -147,19 +151,30 @@ public class bussinessController {
         if(!province.equals("")){
             address = address + ", " + province;
         }
-        hotel.setLocation(address + ", " + city + ", " + province);
+        hotel.setLocation(address);
         hotel.setStatus(0);
-        hotel.setStatus(1);
+        hotel.setStar(1);
         hotel.setRate(1.0);
         hotel.setBussiness(bussiness);
-        Set<Service> services = new HashSet<>();
-        for(int i = 0 ; i < hservice.length ; i++){
-            Service service = serviceRepository.findById(hservice[i]).get();
-            services.add(service);
+        if(hservice.length > 0){
+            Set<Service> services = new HashSet<>();
+            for(int i = 0 ; i < hservice.length ; i++){
+                Service service = serviceRepository.findById(hservice[i]).get();
+                services.add(service);
+            }
+            hotel.setHotelservices(services);
         }
-        hotel.setHotelservices(services);
+        try {
+            // Get the file and save it somewhere
+            byte[] bytes = file.getBytes();
+            Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
+            Files.write(path, bytes);
+            hotel.setImage(file.getOriginalFilename());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         hotelRepository.save(hotel);
-        return "redirect:/bussiness/view-hotel";
+        return "redirect:/bussiness/add-room";
     }
 
 
@@ -185,8 +200,9 @@ public class bussinessController {
                           @RequestParam("numroom") Integer numroom,
                           @RequestParam("price") Double price,
                           @RequestParam("roomfootage") Integer roomfootage,
-                          @RequestParam("rservice") Integer[] rservice){
-
+                          @RequestParam("rservice") Integer[] rservice,
+                          @RequestParam("file") MultipartFile file){
+        String UPLOADED_FOLDER = "/Users/huyvo/Documents/Web/BookingHotel/src/main/resources/static/img/room/";
         Hotel hotel = hotelService.findHotelById(hotelid);
         TypeRoom typeRoom = typeroomService.findTypeRoomById(typeroom);
         Room room = new Room();
@@ -200,12 +216,23 @@ public class bussinessController {
         room.setRoomfootage(roomfootage);
         room.setHotel(hotel);
         room.setTyperoom(typeRoom);
-        Set<Service> services = new HashSet<>();
-        for(int i = 0 ; i < rservice.length ; i++){
-            Service service = serviceRepository.findById(rservice[i]).get();
-            services.add(service);
+        if(rservice.length > 0){
+            Set<Service> services = new HashSet<>();
+            for(int i = 0 ; i < rservice.length ; i++){
+                Service service = serviceRepository.findById(rservice[i]).get();
+                services.add(service);
+            }
+            room.setRoomservices(services);
         }
-        room.setRoomservices(services);
+        try {
+            // Get the file and save it somewhere
+            byte[] bytes = file.getBytes();
+            Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
+            Files.write(path, bytes);
+            room.setImage(file.getOriginalFilename());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         roomService.updateRoom(room);
         return "redirect:/bussiness/add-room";
     }
@@ -225,4 +252,61 @@ public class bussinessController {
         return "redirect:/bussiness/pending";
     }
 
+    @RequestMapping(value="/update-hotel/{id}",method = RequestMethod.GET)
+    public String pageUpdateHotel(@PathVariable Integer id,Model model){
+        Hotel hotel = hotelService.findHotelById(id);
+        model.addAttribute("hotel",hotel);
+        Set<Service> serviceSet = hotel.getHotelservices();
+        List <Integer> services = new ArrayList<>();
+        for (Iterator<Service> it = serviceSet.iterator(); it.hasNext(); ) {
+            Service s = it.next();
+            services.add(s.getServiceid());
+        }
+        model.addAttribute("listService",serviceRepository.findServicesByServiceidBetweenAndServiceidIsNotIn(1,10,services));
+        return "update_hotel";
+    }
+
+    @RequestMapping(value="/update-hotel",method = RequestMethod.POST)
+    public String updateHotel(@RequestParam("hotelid") Integer id,
+                              @RequestParam("nameHotel") String name,
+                              @RequestParam("price") Double price,
+                              @RequestParam("email") String email,
+                              @RequestParam("phone") String phone,
+                              @RequestParam("address") String address,
+                              @RequestParam(name = "hservice",required = false) Integer[] hservice,
+                              @RequestParam(name = "removeSerive",required = false) Integer[] removeService){
+        Hotel hotel = hotelService.findHotelById(id);
+        hotel.setName(name);
+        hotel.setPrice(price);
+        hotel.setEmail(email);
+        hotel.setPhone(phone);
+        hotel.setLocation(address);
+        if(hservice != null){
+            Set<Service> services = new HashSet<>();
+            for(int i = 0 ; i < hservice.length ; i++){
+                Service service = serviceRepository.findById(hservice[i]).get();
+                services.add(service);
+            }
+            for (Iterator<Service> it = hotel.getHotelservices().iterator(); it.hasNext(); ) {
+                Service s = it.next();
+                services.add(s);
+            }
+            hotel.setHotelservices(services);
+        }
+
+        if(removeService != null){
+            Set<Service> services = hotel.getHotelservices();
+            for(int i = 0; i < removeService.length ; i++){
+                services.remove(serviceRepository.findById(removeService[i]).get());
+            }
+            hotel.setHotelservices(services);
+        }
+        hotelService.saveOrUpdate(hotel);
+        return "redirect:/bussiness/view-hotel";
+    }
+
+    @RequestMapping("/bussiness/view-room")
+    public String pageViewRoom(){
+        return "all_rooms";
+    }
 }

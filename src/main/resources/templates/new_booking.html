@@ -540,12 +540,12 @@
 											here</li>
 									</ul>
 								</div>
-								<form action="/add-hotel" method="post">
+								<form action="/add-hotel" method="post" enctype="multipart/form-data">
 									<div class="card-body row">
 										<div class="col-lg-6 p-t-20">
 											<div
 													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-												<input class="mdl-textfield__input" type="text" id="txtNameHotel" name="nameHotel">
+												<input class="mdl-textfield__input" type="text" id="txtNameHotel" name="nameHotel" required>
 												<label class="mdl-textfield__label">Name Hotel</label>
 											</div>
 										</div>
@@ -553,7 +553,7 @@
 											<div
 													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
 												<input class="mdl-textfield__input" type="text"
-													   pattern="-?[0-9]*(\.[0-9]+)?" name="price" id="txtPrice">
+													   pattern="-?[0-9]*(\.[0-9]+)?" name="price" id="txtPrice" required>
 												<label class="mdl-textfield__label">Price</label>
 												<span class="mdl-textfield__error">Number required!</span>
 											</div>
@@ -561,7 +561,7 @@
 										<div class="col-lg-6 p-t-20">
 											<div
 													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-												<input class="mdl-textfield__input" type="email" id="txtEmail" name="email">
+												<input class="mdl-textfield__input" type="email" id="txtEmail" name="email" required>
 												<label class="mdl-textfield__label">Email</label>
 												<span class="mdl-textfield__error">Enter Valid Email Address!</span>
 											</div>
@@ -570,7 +570,7 @@
 											<div
 													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
 												<input class="mdl-textfield__input" type="text"
-													   pattern="-?[0-9]*(\.[0-9]+)?" id="text5" name="phone">
+													   pattern="-?[0-9]*(\.[0-9]+)?" id="text5" name="phone" required>
 												<label class="mdl-textfield__label" for="text5" id="txtPhone">Mobile Number</label>
 												<span class="mdl-textfield__error">Number required!</span>
 											</div>
@@ -578,7 +578,7 @@
 										<div class="col-lg-6 p-t-20">
 											<div
 													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-												<input class="mdl-textfield__input" type="text" id="txtCity" name="city">
+												<input class="mdl-textfield__input" type="text" id="txtCity" name="city" required>
 												<label class="mdl-textfield__label">City</label>
 											</div>
 										</div>
@@ -591,13 +591,13 @@
 										</div>
 										<div class="col-lg-12 p-t-20">
 											<div class="mdl-textfield mdl-js-textfield txt-full-width">
-												<textarea class="mdl-textfield__input" rows="4" id="text7" name="address"></textarea>
+												<textarea class="mdl-textfield__input" rows="4" id="text7" name="address" required></textarea>
 												<label class="mdl-textfield__label" for="text7">Address</label>
 											</div>
 										</div>
 										<div class="col-lg-12 p-t-20">
 											<label class="control-label col-md-3">Upload Photo</label>
-											<p id="id_dropzone" class="dropzone"></p>
+											<input type="file" name="file" accept=".jpeg,.jpg,.png"/>
 										</div>
 										<div class="col-lg-12 p-t-20">
 											<div class="card-box">

@@ -565,7 +565,7 @@
 														<span class="label label-sm label-success" th:if="${list.status == 1}">Active </span>
 													</td>
 													<td class="center">
-														<a href="edit_booking.html" class="btn btn-tbl-edit btn-xs">
+														<a th:href="@{/update-hotel/{id}(id=${list.hotelid})}" class="btn btn-tbl-edit btn-xs">
 															<i class="fa fa-pencil"></i>
 														</a>
 														<button class="btn btn-tbl-delete btn-xs">

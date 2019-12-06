@@ -3,7 +3,7 @@
 <!-- BEGIN HEAD -->
 
 
-<!-- Mirrored from radixtouch.in/templates/admin/hotel/source/add_room.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 24 Nov 2019 16:57:01 GMT -->
+<!-- Mirrored from radixtouch.in/templates/admin/hotel/source/all_rooms.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 24 Nov 2019 16:57:01 GMT -->
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +20,9 @@
 	<!-- Material Design Lite CSS -->
 	<link rel="stylesheet" href="assets/plugins/material/material.min.css">
 	<link rel="stylesheet" href="assets/css/material_style.css">
+	<!-- data tables -->
+	<link href="assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css" rel="stylesheet"
+		type="text/css" />
 	<!-- animation -->
 	<link href="assets/css/pages/animate_page.css" rel="stylesheet">
 	<!-- Template Styles -->
@@ -27,51 +30,13 @@
 	<link href="assets/css/plugins.min.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/theme-color.css" rel="stylesheet" type="text/css" />
-	<!-- dropzone -->
-	<link href="assets/plugins/dropzone/dropzone.css" rel="stylesheet" media="screen">
 	<!-- favicon -->
 	<link rel="shortcut icon" href="assets/img/favicon.ico" />
-	<script type="text/javascript" th:src="@{/js/jquery-1.11.3.min.js}"></script>
 </head>
 <!-- END HEAD -->
 
 <body
 	class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark">
-	<script>
-		$(document).ready(function(){
-			$('#list11').on('change',function(){
-				$('#hotelid').val($(this).attr("data-val"));
-			})
-			$('#list2').on('change',function(){
-				$('#numadult').val($(this).attr("data-val"));
-			})
-			$('#list3').on('change',function(){
-				$('#typeroom').val($(this).attr("data-val"));
-			})
-			$('#list12').on('change',function(){
-				$('#numchild').val($(this).attr("data-val"));
-			})
-			$('#list13').on('change',function(){
-				$('#numbed').val($(this).attr("data-val"));
-			})
-			$('#list14').on('change',function(){
-				$('#numroom').val($(this).attr("data-val"));
-			})
-			$('#sample4').on('change',function(){
-				$('#refund').val($(this).attr("data-val"));
-			})
-			$('.rserviceCheck').click(function(){
-				if($(this).is(':checked')){
-					$('#rservice' + this.id).attr('name','rservice');
-					$('#rservice' + this.id).val(this.id);
-				}
-				else {
-					$('#rservice' + this.id).removeAttr('name');
-					$('#rservice' + this.id).removeAttr('value');
-				}
-			})
-		});
-	</script>
 	<div class="page-wrapper">
 		<!-- start header -->
 		<div class="page-header navbar navbar-fixed-top">
@@ -398,27 +363,20 @@
 									</li>
 								</ul>
 							</li>
-							<li class="nav-item" th:if="${isAdmin == 'ROLE_ADMIN'}">
-								<a th:href="@{/bussiness/pending}" class="nav-link nav-toggle">
-									<i class="material-icons">cached</i>
-									<span class="title">Hotel Pending</span>
-									<span class="arrow"></span>
-								</a>
-							</li>
 							<li class="nav-item">
 								<a href="#" class="nav-link nav-toggle">
 									<i class="material-icons">business_center</i>
-									<span class="title">Hotel</span>
+									<span class="title">Booking</span>
 									<span class="arrow"></span>
 								</a>
 								<ul class="sub-menu">
 									<li class="nav-item">
-										<a th:href="@{/bussiness/add-hotel}" class="nav-link ">
-											<span class="title">Add Hotel</span>
+										<a href="new_booking.html" class="nav-link ">
+											<span class="title">New Booking</span>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a th:href="@{/bussiness/view-hotel}" class="nav-link ">
+										<a href="view_booking.html" class="nav-link ">
 											<span class="title">View Booking</span>
 										</a>
 									</li>
@@ -429,21 +387,23 @@
 									</li>
 								</ul>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item active">
 								<a href="#" class="nav-link nav-toggle">
 									<i class="material-icons">vpn_key</i>
 									<span class="title">Rooms</span>
-									<span class="arrow"></span>
+									<span class="selected"></span>
+									<span class="arrow open"></span>
 								</a>
 								<ul class="sub-menu">
 									<li class="nav-item">
-										<a th:href="@{/bussiness/add-room}" class="nav-link ">
+										<a href="add_room.html" class="nav-link ">
 											<span class="title">Add Room Details</span>
 										</a>
 									</li>
-									<li class="nav-item">
+									<li class="nav-item active">
 										<a href="all_rooms.html" class="nav-link ">
 											<span class="title">View All Rooms</span>
+											<span class="selected"></span>
 										</a>
 									</li>
 									<li class="nav-item">
@@ -501,10 +461,500 @@
 									</li>
 								</ul>
 							</li>
+							<li class="menu-heading m-t-20">
+								<span>-- Layout, Apps &amp; Widget</span>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link nav-toggle"> <i class="material-icons">desktop_mac</i>
+									<span class="title">Layout</span> <span class="arrow"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="layout_boxed.html" class="nav-link "> <span class="title">Boxed</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="layout_full_width.html" class="nav-link "> <span class="title">Full
+												Width</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="layout_collapse.html" class="nav-link "> <span class="title">Collapse
+												Menu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="layout_right_sidebar.html" class="nav-link "> <span class="title">Right
+												Sidebar</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="layout_sidebar_hover_menu.html" class="nav-link "> <span
+												class="title">Hover Sidebar Menu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="layout_mega_menu.html" class="nav-link "> <span class="title">Mega
+												Menu</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link nav-toggle"> <i class="material-icons">grain</i>
+									<span class="title">Apps</span> <span class="arrow"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="chat.html" class="nav-link "> <span class="title">Chat</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="contact_list.html" class="nav-link "> <span class="title">Contact
+												List</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="contact_grid.html" class="nav-link "> <span class="title">Contact
+												Grid</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="gallery.html" class="nav-link "> <span class="title">Gallery</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="support.html" class="nav-link "> <span class="title">Support</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="calendar.html" class="nav-link "> <span class="title">Calendar</span>
+										</a>
+									</li>
+								</ul>
+							</li>
 							<li class="nav-item">
 								<a href="widget.html" class="nav-link nav-toggle"> <i class="material-icons">widgets</i>
 									<span class="title">Widget</span>
 								</a>
+							</li>
+							<li class="menu-heading m-t-20">
+								<span>-- Elements, Forms &amp; Tables</span>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link nav-toggle">
+									<i class="material-icons">dvr</i>
+									<span class="title">UI Elements</span>
+									<span class="label label-rouded label-menu label-warning">new</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="buttons.html" class="nav-link ">
+											<span class="title">Buttons</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="alert.html" class="nav-link ">
+											<span class="title">Alert</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="tabs_accordions_navs.html" class="nav-link ">
+											<span class="title">Tabs &amp; Accordions</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="typography.html" class="nav-link ">
+											<span class="title">Typography</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="notification.html" class="nav-link ">
+											<span class="title">Notifications</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="sweet_alert.html" class="nav-link ">
+											<span class="title">Sweet Alert</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="panels.html" class="nav-link ">
+											<span class="title">Panels</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="grid.html" class="nav-link ">
+											<span class="title">Grids</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="tree.html" class="nav-link ">
+											<span class="title">Tree View</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="carousel.html" class="nav-link ">
+											<span class="title">Carousel</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="animation.html" class="nav-link ">
+											<span class="title">Animations</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link nav-toggle">
+									<i class="material-icons">store</i>
+									<span class="title">Material Elements</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="material_button.html" class="nav-link ">
+											<span class="title">Buttons</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_tab.html" class="nav-link ">
+											<span class="title">Tabs</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_chips.html" class="nav-link ">
+											<span class="title">Chips</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_grid.html" class="nav-link ">
+											<span class="title">Grid</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_form.html" class="nav-link ">
+											<span class="title">Form</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_datepicker.html" class="nav-link ">
+											<span class="title">DatePicker</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_select.html" class="nav-link ">
+											<span class="title">Select Item</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_loading.html" class="nav-link ">
+											<span class="title">Loading</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_menu.html" class="nav-link ">
+											<span class="title">Menu</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_slider.html" class="nav-link ">
+											<span class="title">Slider</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_tables.html" class="nav-link ">
+											<span class="title">Tables</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_toggle.html" class="nav-link ">
+											<span class="title">Toggle</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_badges.html" class="nav-link ">
+											<span class="title">Badges</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="javascript:;" class="nav-link nav-toggle">
+									<i class="material-icons">subtitles</i>
+									<span class="title">Forms </span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="layouts_form.html" class="nav-link ">
+											<span class="title">Form Layout</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="advance_form.html" class="nav-link ">
+											<span class="title">Advance Component</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="validation_form.html" class="nav-link ">
+											<span class="title">Form Validation</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="steps.html" class="nav-link ">
+											<span class="title">Wizard</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="file_upload.html" class="nav-link ">
+											<span class="title">File Upload</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="editable_form.html" class="nav-link ">
+											<span class="title">Editor</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="javascript:;" class="nav-link nav-toggle">
+									<i class="material-icons">list</i>
+									<span class="title">Data Tables</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="basic_table.html" class="nav-link ">
+											<span class="title">Basic Tables</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="advanced_table.html" class="nav-link ">
+											<span class="title">Advance Tables</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="editable_table.html" class="nav-link ">
+											<span class="title">Editable Tables</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="group_table.html" class="nav-link ">
+											<span class="title">Grouping</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="table_data.html" class="nav-link ">
+											<span class="title">Tables With Sourced Data</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu-heading m-t-20">
+								<span>-- Extra Components</span>
+							</li>
+							<li class="nav-item">
+								<a href="javascript:;" class="nav-link nav-toggle">
+									<i class="material-icons">timeline</i>
+									<span class="title">Charts</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="charts_echarts.html" class="nav-link ">
+											<span class="title">eCharts</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="charts_morris.html" class="nav-link ">
+											<span class="title">Morris Charts</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="charts_chartjs.html" class="nav-link ">
+											<span class="title">Chartjs</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="javascript:;" class="nav-link nav-toggle">
+									<i class="material-icons">map</i>
+									<span class="title">Maps</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="google_maps.html" class="nav-link ">
+											<span class="title">Google Maps</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="vector_maps.html" class="nav-link ">
+											<span class="title">Vector Maps</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link nav-toggle"> <i class="material-icons">album</i>
+									<span class="title">Icons</span> <span class="arrow"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="fontawesome_icons.html" class="nav-link "> <span class="title">Font
+												Awesome</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="simpleline_icons.html" class="nav-link "> <span class="title">Simple
+												Line Icon</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="material_icons.html" class="nav-link "> <span class="title">Material
+												Icon</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="javascript:;" class="nav-link nav-toggle"> <i
+										class="material-icons">description</i>
+									<span class="title">Extra pages</span>
+									<span class="arrow"></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="timeline.html" class="nav-link "> <span class="title">Timeline</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="login.html" class="nav-link "> <span class="title">Login</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="sign_up.html" class="nav-link "> <span
+												class="title">Registration</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="user_profile.html" class="nav-link "><span class="title">Profile</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="pricing.html" class="nav-link "><span class="title">Pricing</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="contactus.html" class="nav-link "> <span class="title">Contact
+												Us</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="invoice.html" class="nav-link "><span class="title">Invoice</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="faq.html" class="nav-link "><span class="title">Faq</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="lock_screen.html" class="nav-link "> <span class="title">Lock
+												Screen</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="page-404.html" class="nav-link "> <span class="title">404 Page</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="page-500.html" class="nav-link "> <span class="title">500 Page</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="blank_page.html" class="nav-link "> <span class="title">Blank
+												Page</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="javascript:;" class="nav-link nav-toggle">
+									<i class="material-icons">slideshow</i>
+									<span class="title">Multi Level Menu</span>
+									<span class="arrow "></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="javascript:;" class="nav-link nav-toggle">
+											<i class="fa fa-university"></i> Item 1
+											<span class="arrow"></span>
+										</a>
+										<ul class="sub-menu">
+											<li class="nav-item">
+												<a href="javascript:;" class="nav-link nav-toggle">
+													<i class="fa fa-bell-o"></i> Arrow Toggle
+													<span class="arrow "></span>
+												</a>
+												<ul class="sub-menu">
+													<li class="nav-item">
+														<a href="javascript:;" class="nav-link">
+															<i class="fa fa-calculator"></i> Sample Link 1</a>
+													</li>
+													<li class="nav-item">
+														<a href="#" class="nav-link">
+															<i class="fa fa-clone"></i> Sample Link 2</a>
+													</li>
+													<li class="nav-item">
+														<a href="#" class="nav-link">
+															<i class="fa fa-cogs"></i> Sample Link 3</a>
+													</li>
+												</ul>
+											</li>
+											<li class="nav-item">
+												<a href="#" class="nav-link">
+													<i class="fa fa-file-pdf-o"></i> Sample Link 1</a>
+											</li>
+											<li class="nav-item">
+												<a href="#" class="nav-link">
+													<i class="fa fa-rss"></i> Sample Link 2</a>
+											</li>
+											<li class="nav-item">
+												<a href="#" class="nav-link">
+													<i class="fa fa-hdd-o"></i> Sample Link 3</a>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a href="javascript:;" class="nav-link nav-toggle">
+											<i class="fa fa-gavel"></i> Arrow Toggle
+											<span class="arrow"></span>
+										</a>
+										<ul class="sub-menu">
+											<li class="nav-item">
+												<a href="#" class="nav-link">
+													<i class="fa fa-paper-plane"></i> Sample Link 1</a>
+											</li>
+											<li class="nav-item">
+												<a href="#" class="nav-link">
+													<i class="fa fa-power-off"></i> Sample Link 1</a>
+											</li>
+											<li class="nav-item">
+												<a href="#" class="nav-link">
+													<i class="fa fa-recycle"></i> Sample Link 1
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link">
+											<i class="fa fa-volume-up"></i> Item 3 </a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</div>
@@ -517,248 +967,318 @@
 					<div class="page-bar">
 						<div class="page-title-breadcrumb">
 							<div class=" pull-left">
-								<div class="page-title">Add Room Details</div>
+								<div class="page-title">All Bookings</div>
 							</div>
 							<ol class="breadcrumb page-breadcrumb pull-right">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
 										href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
-								<li><a class="parent-item" href="#">Rooms</a>&nbsp;<i class="fa fa-angle-right"></i>
+								<li><a class="parent-item" href="#">Booking</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
-								<li class="active">Add Room Details</li>
+								<li class="active">All Bookings</li>
 							</ol>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm-12">
-							<div class="card-box">
+						<div class="col-md-12">
+							<div class="card card-box">
 								<div class="card-head">
-									<header>Add Room Details</header>
-									<button id="panel-button"
-										class="mdl-button mdl-js-button mdl-button--icon pull-right"
-										data-upgraded=",MaterialButton">
-										<i class="material-icons">more_vert</i>
-									</button>
-									<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-										data-mdl-for="panel-button">
-										<li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
-										</li>
-										<li class="mdl-menu__item"><i class="material-icons">print</i>Another action
-										</li>
-										<li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
-											here</li>
-									</ul>
+									<header>All Bookings</header>
+									<div class="tools">
+										<a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+										<a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+										<a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+									</div>
 								</div>
-								<form action="/add-room" method="post" enctype="multipart/form-data"	>
-									<div class="card-body row">
-										<div class="col-lg-6 p-t-20">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-												<input class="mdl-textfield__input" type="text" id="txtRoomNo" name="description">
-												<label class="mdl-textfield__label">Room Title</label>
+								<div class="card-body ">
+									<div class="row p-b-20">
+										<div class="col-md-6 col-sm-6 col-6">
+											<div class="btn-group">
+												<a href="add_room.html" id="addRow" class="btn btn-info">
+													Add New <i class="fa fa-plus"></i>
+												</a>
 											</div>
 										</div>
-
-										<div class="col-lg-6 p-t-20">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-												<input class="mdl-textfield__input" type="text" id="list11" value="" readonly
-													   tabIndex="-1">
-												<input type="hidden" name="hotelid" id="hotelid" >
-												<label for="list11" class="pull-right margin-0">
-													<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-												</label>
-												<label for="list11" class="mdl-textfield__label">Choose Hotel</label>
-												<ul data-mdl-for="list11" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-													<th:block th:each="list: ${listHotel}">
-														<li class="mdl-menu__item" th:attr="data-val=${list.hotelid}" th:text="${list.name}">Single</li>
-													</th:block>
-												</ul>
-											</div>
-										</div>
-
-										<div class="col-lg-6 p-t-20">
-											<div
-													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-												<input class="mdl-textfield__input" type="text" id="list3" value="" readonly tabIndex="-1">
-												<input type="hidden" name="typeroom" id="typeroom">
-												<label for="list3" class="pull-right margin-0">
-													<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-												</label>
-												<label for="list3" class="mdl-textfield__label">Room Type</label>
-												<ul data-mdl-for="list3" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-													<th:block th:each="list: ${listTypeRoom}">
-														<li class="mdl-menu__item" th:attr="data-val=${list.typeid}" th:text="${list.type}">Single</li>
-													</th:block>
-												</ul>
-											</div>
-										</div>
-
-										<div class="col-lg-6 p-t-20">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-												<input class="mdl-textfield__input" type="text" id="sample4" value=""
-													   readonly tabIndex="-1">
-												<input type="hidden" name="refund" id="refund">
-												<label class="pull-right margin-0">
-													<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-												</label>
-												<label class="mdl-textfield__label">Cancellation Charges</label>
-												<ul data-mdl-for="sample4"
-													class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-													<li class="mdl-menu__item" data-val="1">Free Cancellation</li>
-													<li class="mdl-menu__item" data-val="0">No Cancellation Allow</li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-lg-6 p-t-20">
-											<div
-													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-												<input class="mdl-textfield__input" type="text" id="list2" value="" readonly
-													   tabIndex="-1">
-												<input type="hidden" name="numadult" id="numadult">
-												<label for="list2" class="pull-right margin-0">
-													<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-												</label>
-												<label for="list2" class="mdl-textfield__label">Num Of Alduts</label>
-												<ul data-mdl-for="list2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-													<li class="mdl-menu__item" data-val="1">1</li>
-													<li class="mdl-menu__item" data-val="2">2</li>
-													<li class="mdl-menu__item" data-val="3">3</li>
-													<li class="mdl-menu__item" data-val="4">4</li>
-													<li class="mdl-menu__item" data-val="5">5</li>
-													<li class="mdl-menu__item" data-val="6">6</li>
-													<li class="mdl-menu__item" data-val="7">7</li>
-													<li class="mdl-menu__item" data-val="8">8</li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-lg-6 p-t-20">
-											<div
-													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-												<input class="mdl-textfield__input" type="text" id="list12" value="" readonly
-													   tabIndex="-1">
-												<input type="hidden" name="numchild" id="numchild">
-												<label for="list12" class="pull-right margin-0">
-													<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-												</label>
-												<label for="list12" class="mdl-textfield__label">Num Of Child</label>
-												<ul data-mdl-for="list12" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-													<li class="mdl-menu__item" data-val="1">1</li>
-													<li class="mdl-menu__item" data-val="2">2</li>
-													<li class="mdl-menu__item" data-val="3">3</li>
-													<li class="mdl-menu__item" data-val="4">4</li>
-													<li class="mdl-menu__item" data-val="5">5</li>
-													<li class="mdl-menu__item" data-val="6">6</li>
-													<li class="mdl-menu__item" data-val="7">7</li>
-													<li class="mdl-menu__item" data-val="8">8</li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-lg-6 p-t-20">
-											<div
-													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-												<input class="mdl-textfield__input" type="text" id="list13" value="" readonly
-													   tabIndex="-1">
-												<input type="hidden" name="numbed" id="numbed">
-												<label for="list13" class="pull-right margin-0">
-													<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-												</label>
-												<label for="list13" class="mdl-textfield__label">Num Of Bed</label>
-												<ul data-mdl-for="list13" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-													<li class="mdl-menu__item" data-val="1">1</li>
-													<li class="mdl-menu__item" data-val="2">2</li>
-													<li class="mdl-menu__item" data-val="3">3</li>
-													<li class="mdl-menu__item" data-val="4">4</li>
-													<li class="mdl-menu__item" data-val="5">5</li>
-													<li class="mdl-menu__item" data-val="6">6</li>
-													<li class="mdl-menu__item" data-val="7">7</li>
-													<li class="mdl-menu__item" data-val="8">8</li>
-												</ul>
-											</div>
-										</div>
-
-										<div class="col-lg-6 p-t-20">
-											<div
-													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-												<input class="mdl-textfield__input" type="text" id="list14" value="" readonly
-													   tabIndex="-1">
-												<input type="hidden" name="numroom" id="numroom">
-												<label for="list14" class="pull-right margin-0">
-													<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-												</label>
-												<label for="list14" class="mdl-textfield__label">Num Of Room</label>
-												<ul data-mdl-for="list14" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-													<li class="mdl-menu__item" data-val="1">1</li>
-													<li class="mdl-menu__item" data-val="2">2</li>
-													<li class="mdl-menu__item" data-val="3">3</li>
-													<li class="mdl-menu__item" data-val="4">4</li>
-													<li class="mdl-menu__item" data-val="5">5</li>
-													<li class="mdl-menu__item" data-val="6">6</li>
-													<li class="mdl-menu__item" data-val="7">7</li>
-													<li class="mdl-menu__item" data-val="8">8</li>
-												</ul>
-											</div>
-										</div>
-
-										<div class="col-lg-6 p-t-20">
-											<div
-													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-												<input class="mdl-textfield__input" type="text"
-													   pattern="-?[0-9]*(\.[0-9]+)?" id="text7" name="price">
-												<label class="mdl-textfield__label" for="text7">Rent Per Night</label>
-												<span class="mdl-textfield__error">Number required!</span>
-											</div>
-										</div>
-
-										<div class="col-lg-6 p-t-20">
-											<div
-													class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-												<input class="mdl-textfield__input" type="text"
-													   pattern="-?[0-9]*(\.[0-9]+)?" id="text8" name="roomfootage">
-												<label class="mdl-textfield__label" for="text8">Room Footage</label>
-												<span class="mdl-textfield__error">Number required!</span>
-											</div>
-										</div>
-
-										<div class="col-lg-12 p-t-20">
-											<label class="control-label col-md-3">Upload Room Photos</label>
-											<input type="file" name="file" accept=".jpeg,.jpg,.png"/>
-										</div>
-										<div class="col-lg-12 p-t-20">
-											<div class="mdl-textfield mdl-js-textfield txt-full-width">
-												<textarea class="mdl-textfield__input" rows="4" id="education"></textarea>
-												<label class="mdl-textfield__label" for="text7">Room Description</label>
-											</div>
-										</div>
-										<div class="col-lg-12 p-t-20">
-											<div class="card-box">
-												<div class="card-head">
-													<header>Add Service</header>
-												</div>
-												<div class="card-body ">
-													<ul class="to-do-list ui-sortable" id="sortable-todo">
-														<li class="clearfix" th:each="list : ${listService}">
-															<div class="todo-check pull-left">
-																<input class ="rserviceCheck" type="checkbox" value="None" th:id="${list.serviceid}">
-																<label th:for="${list.serviceid}"></label>
-																<input type="hidden" th:id="${'rservice' + list.serviceid}">
-															</div>
-															<p class="todo-title" th:text="${list.name}">Add fees details in system
-															</p>
-															<div class="todo-actionlist pull-right clearfix">
-																<a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
-															</div>
-														</li>
+										<div class="card-body row">
+											<div class="col-lg-6 p-t-20">
+												<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
+													<input class="mdl-textfield__input" type="text" id="sample4" value=""
+														   readonly tabIndex="-1">
+													<input type="hidden" name="refund" id="refund">
+													<label class="pull-right margin-0">
+														<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+													</label>
+													<label class="mdl-textfield__label">Cancellation Charges</label>
+													<ul data-mdl-for="sample4"
+														class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+														<li class="mdl-menu__item" data-val="1">Free Cancellation</li>
+														<li class="mdl-menu__item" data-val="0">No Cancellation Allow</li>
 													</ul>
 												</div>
 											</div>
 										</div>
-										<div class="col-lg-12 p-t-20 text-center">
-											<button type="submit"
-													class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Submit</button>
-											<button type="button"
-													class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
-										</div>
 									</div>
-								</form>
+									<div class="table-scrollable">
+										<table class="table table-hover table-checkable order-column full-width"
+											id="example4">
+											<thead>
+												<tr>
+													<th class="center"> img </th>
+													<th class="center"> # </th>
+													<th class="center"> Type </th>
+													<th class="center"> AC/Non AC </th>
+													<th class="center"> Meal </th>
+													<th class="center"> Bad Capacity </th>
+													<th class="center"> Phone </th>
+													<th class="center"> Rent </th>
+													<th class="center"> Action </th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="odd gradeX">
+													<td class="user-circle-img">
+														<img src="assets/img/user/user1.jpg" alt="">
+													</td>
+													<td class="center">101</td>
+													<td class="center">Single</td>
+													<td class="center">AC</td>
+													<td class="center">Free Dinner</td>
+													<td class="center">2</td>
+													<td class="center">123456789</td>
+													<td class="center">25$</td>
+													<td class="center">
+														<a href="edit_room.html" class="btn btn-tbl-edit btn-xs">
+															<i class="fa fa-pencil"></i>
+														</a>
+														<a class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o "></i>
+														</a>
+													</td>
+												</tr>
+												<tr class="odd gradeX">
+													<td class="user-circle-img">
+														<img src="assets/img/user/user2.jpg" alt="">
+													</td>
+													<td class="center">102</td>
+													<td class="center">Double</td>
+													<td class="center">Non AC</td>
+													<td class="center">Free Lunch</td>
+													<td class="center">3</td>
+													<td class="center">123456789</td>
+													<td class="center">35$</td>
+													<td class="center">
+														<a href="edit_room.html" class="btn btn-tbl-edit btn-xs">
+															<i class="fa fa-pencil"></i>
+														</a>
+														<a class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o "></i>
+														</a>
+													</td>
+												</tr>
+												<tr class="odd gradeX">
+													<td class="user-circle-img">
+														<img src="assets/img/user/user3.jpg" alt="">
+													</td>
+													<td class="center">103</td>
+													<td class="center">King</td>
+													<td class="center">AC</td>
+													<td class="center">None</td>
+													<td class="center">5</td>
+													<td class="center">123456789</td>
+													<td class="center">65$</td>
+													<td class="center">
+														<a href="edit_room.html" class="btn btn-tbl-edit btn-xs">
+															<i class="fa fa-pencil"></i>
+														</a>
+														<a class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o "></i>
+														</a>
+													</td>
+												</tr>
+												<tr class="odd gradeX">
+													<td class="user-circle-img">
+														<img src="assets/img/user/user1.jpg" alt="">
+													</td>
+													<td class="center">101</td>
+													<td class="center">Single</td>
+													<td class="center">AC</td>
+													<td class="center">Free Dinner</td>
+													<td class="center">2</td>
+													<td class="center">123456789</td>
+													<td class="center">25$</td>
+													<td class="center">
+														<a href="edit_room.html" class="btn btn-tbl-edit btn-xs">
+															<i class="fa fa-pencil"></i>
+														</a>
+														<a class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o "></i>
+														</a>
+													</td>
+												</tr>
+												<tr class="odd gradeX">
+													<td class="user-circle-img">
+														<img src="assets/img/user/user2.jpg" alt="">
+													</td>
+													<td class="center">102</td>
+													<td class="center">Double</td>
+													<td class="center">Non AC</td>
+													<td class="center">Free Lunch</td>
+													<td class="center">3</td>
+													<td class="center">123456789</td>
+													<td class="center">35$</td>
+													<td class="center">
+														<a href="edit_room.html" class="btn btn-tbl-edit btn-xs">
+															<i class="fa fa-pencil"></i>
+														</a>
+														<a class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o "></i>
+														</a>
+													</td>
+												</tr>
+												<tr class="odd gradeX">
+													<td class="user-circle-img">
+														<img src="assets/img/user/user3.jpg" alt="">
+													</td>
+													<td class="center">103</td>
+													<td class="center">King</td>
+													<td class="center">AC</td>
+													<td class="center">None</td>
+													<td class="center">5</td>
+													<td class="center">123456789</td>
+													<td class="center">65$</td>
+													<td class="center">
+														<a href="edit_room.html" class="btn btn-tbl-edit btn-xs">
+															<i class="fa fa-pencil"></i>
+														</a>
+														<a class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o "></i>
+														</a>
+													</td>
+												</tr>
+												<tr class="odd gradeX">
+													<td class="user-circle-img">
+														<img src="assets/img/user/user1.jpg" alt="">
+													</td>
+													<td class="center">101</td>
+													<td class="center">Single</td>
+													<td class="center">AC</td>
+													<td class="center">Free Dinner</td>
+													<td class="center">2</td>
+													<td class="center">123456789</td>
+													<td class="center">25$</td>
+													<td class="center">
+														<a href="edit_room.html" class="btn btn-tbl-edit btn-xs">
+															<i class="fa fa-pencil"></i>
+														</a>
+														<a class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o "></i>
+														</a>
+													</td>
+												</tr>
+												<tr class="odd gradeX">
+													<td class="user-circle-img">
+														<img src="assets/img/user/user2.jpg" alt="">
+													</td>
+													<td class="center">102</td>
+													<td class="center">Double</td>
+													<td class="center">Non AC</td>
+													<td class="center">Free Lunch</td>
+													<td class="center">3</td>
+													<td class="center">123456789</td>
+													<td class="center">35$</td>
+													<td class="center">
+														<a href="edit_room.html" class="btn btn-tbl-edit btn-xs">
+															<i class="fa fa-pencil"></i>
+														</a>
+														<a class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o "></i>
+														</a>
+													</td>
+												</tr>
+												<tr class="odd gradeX">
+													<td class="user-circle-img">
+														<img src="assets/img/user/user3.jpg" alt="">
+													</td>
+													<td class="center">103</td>
+													<td class="center">King</td>
+													<td class="center">AC</td>
+													<td class="center">None</td>
+													<td class="center">5</td>
+													<td class="center">123456789</td>
+													<td class="center">65$</td>
+													<td class="center">
+														<a href="edit_room.html" class="btn btn-tbl-edit btn-xs">
+															<i class="fa fa-pencil"></i>
+														</a>
+														<a class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o "></i>
+														</a>
+													</td>
+												</tr>
+												<tr class="odd gradeX">
+													<td class="user-circle-img">
+														<img src="assets/img/user/user1.jpg" alt="">
+													</td>
+													<td class="center">101</td>
+													<td class="center">Single</td>
+													<td class="center">AC</td>
+													<td class="center">Free Dinner</td>
+													<td class="center">2</td>
+													<td class="center">123456789</td>
+													<td class="center">25$</td>
+													<td class="center">
+														<a href="edit_room.html" class="btn btn-tbl-edit btn-xs">
+															<i class="fa fa-pencil"></i>
+														</a>
+														<a class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o "></i>
+														</a>
+													</td>
+												</tr>
+												<tr class="odd gradeX">
+													<td class="user-circle-img">
+														<img src="assets/img/user/user2.jpg" alt="">
+													</td>
+													<td class="center">102</td>
+													<td class="center">Double</td>
+													<td class="center">Non AC</td>
+													<td class="center">Free Lunch</td>
+													<td class="center">3</td>
+													<td class="center">123456789</td>
+													<td class="center">35$</td>
+													<td class="center">
+														<a href="edit_room.html" class="btn btn-tbl-edit btn-xs">
+															<i class="fa fa-pencil"></i>
+														</a>
+														<a class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o "></i>
+														</a>
+													</td>
+												</tr>
+												<tr class="odd gradeX">
+													<td class="user-circle-img">
+														<img src="assets/img/user/user3.jpg" alt="">
+													</td>
+													<td class="center">103</td>
+													<td class="center">King</td>
+													<td class="center">AC</td>
+													<td class="center">None</td>
+													<td class="center">5</td>
+													<td class="center">123456789</td>
+													<td class="center">65$</td>
+													<td class="center">
+														<a href="edit_room.html" class="btn btn-tbl-edit btn-xs">
+															<i class="fa fa-pencil"></i>
+														</a>
+														<a class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o "></i>
+														</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -1151,17 +1671,17 @@
 	<script src="assets/js/app.js"></script>
 	<script src="assets/js/layout.js"></script>
 	<script src="assets/js/theme-color.js"></script>
+	<!-- data tables -->
+	<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js"></script>
+	<script src="assets/js/pages/table/table_data.js"></script>
 	<!-- Material -->
 	<script src="assets/plugins/material/material.min.js"></script>
-	<script src="assets/js/pages/material_select/getmdl-select.js"></script>
-	<!-- dropzone -->
-	<script src="assets/plugins/dropzone/dropzone.js"></script>
-	<script src="assets/plugins/dropzone/dropzone-call.js"></script>
 	<!-- animation -->
 	<script src="assets/js/pages/ui/animations.js"></script>
 	<!-- end js include path -->
 </body>
 
 
-<!-- Mirrored from radixtouch.in/templates/admin/hotel/source/add_room.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 24 Nov 2019 16:57:01 GMT -->
+<!-- Mirrored from radixtouch.in/templates/admin/hotel/source/all_rooms.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 24 Nov 2019 16:57:01 GMT -->
 </html>
