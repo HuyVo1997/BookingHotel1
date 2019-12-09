@@ -59,9 +59,13 @@ public class User implements Serializable {
     )
     private Set<Role> roles;
 
+    @OneToMany(mappedBy ="user",fetch = FetchType.LAZY)
+    private Set<Booking> booking;
+
     public User(){}
 
-    public User(String firstname, String lastname, String phone, String email, String password, String homeairport, String stressaddress, String city, String state, int zipcode, String country) {
+    public User(String firstname, String lastname, String phone, String email, String password, String homeairport, String stressaddress, String city, String state, int zipcode,
+                String country, Set<Role> roles, Set<Booking> booking) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.phone = phone;
@@ -73,6 +77,8 @@ public class User implements Serializable {
         this.state = state;
         this.zipcode = zipcode;
         this.country = country;
+        this.roles = roles;
+        this.booking = booking;
     }
 
     public int getUserid() {
@@ -177,5 +183,13 @@ public class User implements Serializable {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public Set<Booking> getBooking() {
+        return booking;
+    }
+
+    public void setBooking(Set<Booking> booking) {
+        this.booking = booking;
     }
 }

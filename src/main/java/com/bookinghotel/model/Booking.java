@@ -16,8 +16,9 @@ public class Booking {
     @Column(name = "type")
     private String type;
 
-    @Column(name="userid")
-    private Integer userid;
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "userid")
+    private User user;
 
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "roomid")
@@ -53,11 +54,11 @@ public class Booking {
     public Booking() {
     }
 
-    public Booking(String type, Integer userid, Room room, String title,
-                   String location, String orderdate, String executiondate,
-                   Double price, Integer current, Integer quantity, String codetransaction, String secretkey) {
+    public Booking(String type, User user, Room room, String title, String location,
+                   String orderdate, String executiondate, Double price, Integer current,
+                   Integer quantity, String codetransaction, String secretkey) {
         this.type = type;
-        this.userid = userid;
+        this.user = user;
         this.room = room;
         this.title = title;
         this.location = location;
@@ -78,12 +79,12 @@ public class Booking {
         this.codetransaction = codetransaction;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getType() {

@@ -16,14 +16,14 @@ public class AjaxReponseBody {
         this.msg = msg;
     }
 
-    public List<Hotel> getResult() {
+    public List<Room> getResult() {
         return result;
     }
 
-    public void setResult(List<Hotel> result) {
+    public void setResult(List<Room> result) {
         this.result = result;
     }
 
-    List<Hotel> result;
+    List<Room> result;
 
 }

@@ -290,7 +290,7 @@
 								<div class="user-panel">
 									<div class="row">
 										<div class="sidebar-userpic">
-											<img src="assets/img/dp.jpg" class="img-responsive" alt=""> </div>
+											<img th:src="@{/assets/img/dp.jpg}" class="img-responsive" alt=""> </div>
 									</div>
 									<div class="profile-usertitle">
 										<div class="sidebar-userpic-name"> John Deo </div>
@@ -298,19 +298,19 @@
 									</div>
 									<div class="sidebar-userpic-btn">
 										<a class="tooltips" href="user_profile.html" data-placement="top"
-											data-original-title="Profile">
+										   data-original-title="Profile">
 											<i class="material-icons">person_outline</i>
 										</a>
 										<a class="tooltips" href="email_inbox.html" data-placement="top"
-											data-original-title="Mail">
+										   data-original-title="Mail">
 											<i class="material-icons">mail_outline</i>
 										</a>
 										<a class="tooltips" href="chat.html" data-placement="top"
-											data-original-title="Chat">
+										   data-original-title="Chat">
 											<i class="material-icons">chat</i>
 										</a>
-										<a class="tooltips" href="login.html" data-placement="top"
-											data-original-title="Logout">
+										<a class="tooltips" th:href="@{/bussiness/logoutBussiness}" data-placement="top"
+										   data-original-title="Logout">
 											<i class="material-icons">input</i>
 										</a>
 									</div>
@@ -318,50 +318,6 @@
 							</li>
 							<li class="menu-heading">
 								<span>-- Main</span>
-							</li>
-							<li class="nav-item start">
-								<a href="#" class="nav-link nav-toggle">
-									<i class="material-icons">dashboard</i>
-									<span class="title">Dashboard</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub-menu">
-									<li class="nav-item">
-										<a href="index.html" class="nav-link ">
-											<span class="title">Dashboard 1</span>
-										</a>
-									</li>
-									<li class="nav-item ">
-										<a href="dashboard2.html" class="nav-link ">
-											<span class="title">Dashboard 2</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link nav-toggle">
-									<i class="material-icons">email</i>
-									<span class="title">Email</span>
-									<span class="arrow"></span>
-									<span class="label label-rouded label-menu label-danger">new</span>
-								</a>
-								<ul class="sub-menu">
-									<li class="nav-item">
-										<a href="email_inbox.html" class="nav-link ">
-											<span class="title">Inbox</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="email_view.html" class="nav-link ">
-											<span class="title">View Mail</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="email_compose.html" class="nav-link ">
-											<span class="title">Compose Mail</span>
-										</a>
-									</li>
-								</ul>
 							</li>
 							<li class="nav-item" th:if="${isAdmin == 'ROLE_ADMIN'}">
 								<a th:href="@{/bussiness/pending}" class="nav-link nav-toggle">
@@ -384,12 +340,7 @@
 									</li>
 									<li class="nav-item">
 										<a th:href="@{/bussiness/view-hotel}" class="nav-link ">
-											<span class="title">View Booking</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="edit_booking.html" class="nav-link ">
-											<span class="title">Edit Booking</span>
+											<span class="title">View Hotel</span>
 										</a>
 									</li>
 								</ul>
@@ -407,69 +358,11 @@
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="all_rooms.html" class="nav-link ">
+										<a th:href="@{/bussiness/view-room}" class="nav-link ">
 											<span class="title">View All Rooms</span>
 										</a>
 									</li>
-									<li class="nav-item">
-										<a href="edit_room.html" class="nav-link ">
-											<span class="title">Edit Room Details</span>
-										</a>
-									</li>
 								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link nav-toggle">
-									<i class="material-icons">group</i>
-									<span class="title">Staff</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub-menu">
-									<li class="nav-item">
-										<a href="add_staff.html" class="nav-link ">
-											<span class="title">Add Staff Details</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="all_staffs.html" class="nav-link ">
-											<span class="title">View All Staffs</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="edit_staff.html" class="nav-link ">
-											<span class="title">Edit Staff Details</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link nav-toggle">
-									<i class="material-icons">local_taxi</i>
-									<span class="title">Transportation</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub-menu">
-									<li class="nav-item">
-										<a href="add_vehicle.html" class="nav-link ">
-											<span class="title">Add Vehicle Details</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="all_vehicles.html" class="nav-link ">
-											<span class="title">View All Vehicle</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="edit_vehicle.html" class="nav-link ">
-											<span class="title">Edit Vehicle Details</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="widget.html" class="nav-link nav-toggle"> <i class="material-icons">widgets</i>
-									<span class="title">Widget</span>
-								</a>
 							</li>
 						</ul>
 					</div>
@@ -509,7 +402,7 @@
 									<div class="row p-b-20">
 										<div class="col-md-6 col-sm-6 col-6">
 											<div class="btn-group">
-												<a href="new_booking.html" id="addRow" class="btn btn-info">
+												<a th:href="@{/bussiness/add-hotel}" id="addRow" class="btn btn-info">
 													Add New <i class="fa fa-plus"></i>
 												</a>
 											</div>
@@ -565,12 +458,12 @@
 														<span class="label label-sm label-success" th:if="${list.status == 1}">Active </span>
 													</td>
 													<td class="center">
-														<a th:href="@{/update-hotel/{id}(id=${list.hotelid})}" class="btn btn-tbl-edit btn-xs">
+														<a th:href="@{/bussiness/update-hotel/{id}(id=${list.hotelid})}" class="btn btn-tbl-edit btn-xs">
 															<i class="fa fa-pencil"></i>
 														</a>
-														<button class="btn btn-tbl-delete btn-xs">
+														<a th:href="@{/bussiness/delete-hotel/{id}(id=${list.hotelid})}" class="btn btn-tbl-delete btn-xs">
 															<i class="fa fa-trash-o "></i>
-														</button>
+														</a>
 													</td>
 												</tr>
 											</tbody>

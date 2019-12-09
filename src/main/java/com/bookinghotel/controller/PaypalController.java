@@ -94,20 +94,41 @@ public class PaypalController {
             Payment payment = paypalService.excutePayment(paymentId,payerId);
             String saleid = Encryptor.encrypt(payment.getTransactions().get(0).getRelatedResources().get(0).getSale().getId(),secretKey);
             Booking booking;
-            if(room.getRefund() == 1){
-                booking = new Booking("hotel",user.getUserid(),room,room.getTyperoom().getType(),hotelController.locationText,
-                        hotelController.dateStart,hotelController.dateEnd,priceTotal,1,numRoom, saleid, secretKey);
+            if(user != null){
+                if(room.getRefund() == 1){
+                    booking = new Booking("hotel",user,room,room.getTyperoom().getType(),hotelController.locationText,
+                            hotelController.dateStart,hotelController.dateEnd,priceTotal,1,numRoom, saleid, secretKey);
+                }
+                else {
+                    booking = new Booking("hotel",user,room,room.getTyperoom().getType(),hotelController.locationText,
+                            hotelController.dateStart,hotelController.dateEnd,priceTotal,1,numRoom, null, null);
+                }
             }
-            else {
-                booking = new Booking("hotel",user.getUserid(),room,room.getTyperoom().getType(),hotelController.locationText,
-                        hotelController.dateStart,hotelController.dateEnd,priceTotal,1,numRoom, null, null);
+            else{
+                int iduser = 0;
+                if(room.getRefund() == 1){
+                    booking = new Booking("hotel",null,room,room.getTyperoom().getType(),hotelController.locationText,
+                            hotelController.dateStart,hotelController.dateEnd,priceTotal,1,numRoom, saleid, secretKey);
+                }
+                else {
+                    booking = new Booking("hotel",null,room,room.getTyperoom().getType(),hotelController.locationText,
+                            hotelController.dateStart,hotelController.dateEnd,priceTotal,1,numRoom, null, null);
+                }
             }
-            bookingService.saveBooking(booking);
-            room.setNumroom(room.getNumroom() - numRoom);
-            roomService.updateRoom(room);
-            System.out.println(payment.toJSON());
+            Room roomCheck = roomService.findRoomById(hotelController.roomId);
+            if(roomCheck.getNumroom() <= 0){
+                payment.setState("failed");
+            }
+            else{
+                bookingService.saveBooking(booking);
+                room.setNumroom(room.getNumroom() - numRoom);
+                roomService.updateRoom(room);
+            }
             if(payment.getState().equals("approved")){
                 return "success-payment";
+            }
+            if(payment.getState().equals("failed")){
+                return "cancle";
             }
         }
         catch (PayPalRESTException e){
@@ -119,6 +140,6 @@ public class PaypalController {
     @RequestMapping(value="/refund/{id}",method = RequestMethod.GET)
     public String refundPay(@PathVariable String id) throws PayPalRESTException {
         paypalService.refund(id);
-        return "redirect:/";
+        return "redirect:/user/booking-history";
     }
 }

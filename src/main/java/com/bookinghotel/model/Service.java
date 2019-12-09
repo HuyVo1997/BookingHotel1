@@ -21,7 +21,7 @@ public class Service {
     @Column(name="image")
     private String image;
 
-    @ManyToMany(mappedBy = "hotelservices",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "hotelservices",fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Hotel> hotels;
 

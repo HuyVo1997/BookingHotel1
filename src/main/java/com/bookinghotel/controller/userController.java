@@ -53,7 +53,7 @@ public class userController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String email = auth.getName();
         model.addAttribute("listBooking",
-                bookingRepository.findBookingsByUserid(userRepository.findUserByEmail(email).getUserid()));
+                bookingRepository.findBookingsByUser(userRepository.findUserByEmail(email)));
         return "user-profile-booking-history";
     }
 }

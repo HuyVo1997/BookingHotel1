@@ -39,6 +39,7 @@ public class Room implements Serializable {
     private Double price;
 
     @OneToMany(mappedBy ="room",fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Booking> booking;
 
     @ManyToOne(fetch=FetchType.LAZY)
@@ -52,11 +53,11 @@ public class Room implements Serializable {
             joinColumns = @JoinColumn(name = "roomid"),
             inverseJoinColumns = @JoinColumn(name = "serviceid")
     )
+    @JsonIgnore
     private Set<Service> roomservices;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name= "typeid")
-    @JsonIgnore
     private TypeRoom typeroom;
 
     @Column(name = "numroom")

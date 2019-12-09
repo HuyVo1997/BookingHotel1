@@ -37,10 +37,10 @@ public class Hotel implements Serializable {
     @Column(name = "phone")
     private String phone;
 
-    @OneToMany(mappedBy = "hotel",fetch=FetchType.LAZY)
+    @OneToMany(mappedBy = "hotel",fetch=FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Room> rooms;
 
-    @ManyToMany(fetch=FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(
             name = "hotel_service",
             joinColumns = @JoinColumn(name = "hotelid"),

@@ -318,32 +318,6 @@
 							<li class="menu-heading">
 								<span>-- Main</span>
 							</li>
-
-							<li class="nav-item">
-								<a href="#" class="nav-link nav-toggle">
-									<i class="material-icons">email</i>
-									<span class="title">Email</span>
-									<span class="arrow"></span>
-									<span class="label label-rouded label-menu label-danger">new</span>
-								</a>
-								<ul class="sub-menu">
-									<li class="nav-item">
-										<a href="email_inbox.html" class="nav-link ">
-											<span class="title">Inbox</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="email_view.html" class="nav-link ">
-											<span class="title">View Mail</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="email_compose.html" class="nav-link ">
-											<span class="title">Compose Mail</span>
-										</a>
-									</li>
-								</ul>
-							</li>
 							<li class="nav-item" th:if="${isAdmin == 'ROLE_ADMIN'}">
 								<a th:href="@{/bussiness/pending}" class="nav-link nav-toggle">
 									<i class="material-icons">cached</i>
@@ -368,11 +342,6 @@
 											<span class="title">View Hotel</span>
 										</a>
 									</li>
-									<li class="nav-item">
-										<a th:href="@{/bussiness/hotel-service}" class="nav-link ">
-											<span class="title">Add Hotel Service</span>
-										</a>
-									</li>
 								</ul>
 							</li>
 							<li class="nav-item">
@@ -392,65 +361,7 @@
 											<span class="title">View All Rooms</span>
 										</a>
 									</li>
-									<li class="nav-item">
-										<a href="edit_room.html" class="nav-link ">
-											<span class="title">Edit Room Details</span>
-										</a>
-									</li>
 								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link nav-toggle">
-									<i class="material-icons">group</i>
-									<span class="title">Staff</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub-menu">
-									<li class="nav-item">
-										<a href="add_staff.html" class="nav-link ">
-											<span class="title">Add Staff Details</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="all_staffs.html" class="nav-link ">
-											<span class="title">View All Staffs</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="edit_staff.html" class="nav-link ">
-											<span class="title">Edit Staff Details</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link nav-toggle">
-									<i class="material-icons">local_taxi</i>
-									<span class="title">Transportation</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub-menu">
-									<li class="nav-item">
-										<a href="add_vehicle.html" class="nav-link ">
-											<span class="title">Add Vehicle Details</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="all_vehicles.html" class="nav-link ">
-											<span class="title">View All Vehicle</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="edit_vehicle.html" class="nav-link ">
-											<span class="title">Edit Vehicle Details</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a href="widget.html" class="nav-link nav-toggle"> <i class="material-icons">widgets</i>
-									<span class="title">Widget</span>
-								</a>
 							</li>
 						</ul>
 					</div>

@@ -1,14 +1,14 @@
 package com.bookinghotel.bussiness;
 
+import com.bookinghotel.filter.AjaxReponseBody;
 import com.bookinghotel.model.*;
-import com.bookinghotel.repository.bussinessRepository;
-import com.bookinghotel.repository.hotelRepository;
-import com.bookinghotel.repository.serviceRepository;
+import com.bookinghotel.repository.*;
 import com.bookinghotel.service.bussinessService;
 import com.bookinghotel.service.hotelService;
 import com.bookinghotel.service.roomService;
 import com.bookinghotel.service.typeroomService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -51,22 +51,33 @@ public class bussinessController {
     @Autowired
     serviceRepository serviceRepository;
 
-    public String statusLogin(HttpSession session){
-        if(session.getAttribute("statusLogin") == null){
-            return "redirect:/bussiness/login";
-        }
-        return null;
-    }
+    @Autowired
+    roomRepository roomRepository;
+
+    @Autowired
+    roleRepository roleRepository;
 
     public String checkAdmin(HttpSession session){
         Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
         Bussiness admin = bussinessRepository.findBussinessByUsername(bussiness.getUsername());
-        return (admin.getRoles().iterator().next().getName());
+        String role = "";
+        for (Iterator<Role> it = admin.getRoles().iterator(); it.hasNext(); ) {
+            Role f = it.next();
+            if(f.getName().equals("ROLE_ADMIN")){
+                role = f.getName();
+            }
+        }
+        return role;
     }
 
     @RequestMapping("/bussiness/login")
     public String login(HttpSession session){
-        return "login";
+        if(session.getAttribute("statusLogin") == null){
+            return "login";
+        }
+        else {
+            return "redirect:/bussiness/home-page";
+        }
     }
 
     @RequestMapping("/bussiness/register")
@@ -82,6 +93,11 @@ public class bussinessController {
         Bussiness bussiness = new Bussiness();
         bussiness.setEmail(email);
         bussiness.setUsername(username);
+        Set<Role> roles = new HashSet<>();
+        Role role = new Role();
+        role.setRoleid(3);
+        roles.add(role);
+        bussiness.setRoles(roles);
         bussiness.setPassword(bCryptPasswordEncoder.encode(password));
         bussinessService.saveOrUpdate(bussiness);
         return "login";
@@ -114,17 +130,26 @@ public class bussinessController {
 
     @RequestMapping("/bussiness/add-hotel")
     public String pageAddHotel(HttpSession session, Model model){
-        model.addAttribute("isAdmin",checkAdmin(session));
-        model.addAttribute("listService",serviceRepository.findServicesByServiceidBetween(1,10));
-        return "new_booking";
+        if(session.getAttribute("statusLogin") == null){
+            return "login";
+        }
+        else {
+            model.addAttribute("listService",serviceRepository.findServicesByServiceidBetween(1,10));
+            return "new_booking";
+        }
     }
 
     @RequestMapping("/bussiness/view-hotel")
     public String viewHotel(HttpSession session, Model model){
-        model.addAttribute("isAdmin",checkAdmin(session));
-        Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
-        model.addAttribute("listHotel",hotelRepository.findHotelsByBussiness(bussiness));
-        return "view_booking";
+        if(session.getAttribute("statusLogin") == null){
+            return "login";
+        }
+        else {
+            model.addAttribute("isAdmin",checkAdmin(session));
+            Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
+            model.addAttribute("listHotel",hotelRepository.findHotelsByBussiness(bussiness));
+            return "view_booking";
+        }
     }
 
     @RequestMapping(value="/add-hotel",method = RequestMethod.POST)
@@ -180,16 +205,21 @@ public class bussinessController {
 
     @RequestMapping("/bussiness/add-room")
     public String pageAddRoom(HttpSession session,Model model){
-        Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
-        model.addAttribute("listHotel",hotelRepository.findHotelsByBussiness(bussiness));
-        model.addAttribute("isAdmin",checkAdmin(session));
-        model.addAttribute("listService",serviceRepository.findServicesByServiceidBetween(11,19));
-        model.addAttribute("listTypeRoom",typeroomService.getAllTypeRooms());
-        return "add_room";
-}
+        if(session.getAttribute("statusLogin") == null){
+            return "login";
+        }
+        else {
+            model.addAttribute("isAdmin",checkAdmin(session));
+            Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
+            model.addAttribute("listHotel",hotelRepository.findHotelsByBussiness(bussiness));
+            model.addAttribute("listService",serviceRepository.findServicesByServiceidBetween(11,19));
+            model.addAttribute("listTypeRoom",typeroomService.getAllTypeRooms());
+            return "add_room";
+        }
+    }
 
     @RequestMapping(value="/add-room",method = RequestMethod.POST)
-    public String addRoom(HttpSession session,
+    public String addRoom(
                           @RequestParam("hotelid") Integer hotelid,
                           @RequestParam("description") String description,
                           @RequestParam("typeroom") Integer typeroom,
@@ -216,7 +246,7 @@ public class bussinessController {
         room.setRoomfootage(roomfootage);
         room.setHotel(hotel);
         room.setTyperoom(typeRoom);
-        if(rservice.length > 0){
+        if(rservice != null){
             Set<Service> services = new HashSet<>();
             for(int i = 0 ; i < rservice.length ; i++){
                 Service service = serviceRepository.findById(rservice[i]).get();
@@ -239,9 +269,14 @@ public class bussinessController {
 
     @RequestMapping("/bussiness/pending")
     public String pendingHotel(HttpSession session,Model model){
-        model.addAttribute("isAdmin",checkAdmin(session));
-        model.addAttribute("listHotelPending",hotelService.findAllhotel());
-        return "view_pending";
+        if(session.getAttribute("statusLogin") == null){
+            return "login";
+        }
+        else {
+            model.addAttribute("isAdmin",checkAdmin(session));
+            model.addAttribute("listHotelPending",hotelService.findAllhotel());
+            return "view_pending";
+        }
     }
 
     @RequestMapping(value="/activePending/{id}",method = RequestMethod.GET)
@@ -252,18 +287,35 @@ public class bussinessController {
         return "redirect:/bussiness/pending";
     }
 
-    @RequestMapping(value="/update-hotel/{id}",method = RequestMethod.GET)
-    public String pageUpdateHotel(@PathVariable Integer id,Model model){
-        Hotel hotel = hotelService.findHotelById(id);
-        model.addAttribute("hotel",hotel);
-        Set<Service> serviceSet = hotel.getHotelservices();
-        List <Integer> services = new ArrayList<>();
-        for (Iterator<Service> it = serviceSet.iterator(); it.hasNext(); ) {
-            Service s = it.next();
-            services.add(s.getServiceid());
+    @RequestMapping(value="/bussiness/update-hotel/{id}",method = RequestMethod.GET)
+    public String pageUpdateHotel(HttpSession session,@PathVariable Integer id,Model model){
+        if(session.getAttribute("statusLogin") == null){
+            return "login";
         }
-        model.addAttribute("listService",serviceRepository.findServicesByServiceidBetweenAndServiceidIsNotIn(1,10,services));
-        return "update_hotel";
+        else {
+            model.addAttribute("isAdmin",checkAdmin(session));
+            Hotel hotel = hotelService.findHotelById(id);
+            model.addAttribute("hotel",hotel);
+            Set<Service> serviceSet = hotel.getHotelservices();
+            List <Integer> services = new ArrayList<>();
+            for (Iterator<Service> it = serviceSet.iterator(); it.hasNext(); ) {
+                Service s = it.next();
+                services.add(s.getServiceid());
+            }
+            model.addAttribute("listService",serviceRepository.findServicesByServiceidBetweenAndServiceidIsNotIn(1,10,services));
+            return "update_hotel";
+        }
+    }
+
+    @RequestMapping(value="/bussiness/delete-hotel/{id}",method = RequestMethod.GET)
+    public String deleteHotel(HttpSession session,@PathVariable Integer id,Model model){
+        if(session.getAttribute("statusLogin") == null){
+            return "login";
+        }
+        else {
+            hotelService.delete(id);
+            return "redirect:/view_booking";
+        }
     }
 
     @RequestMapping(value="/update-hotel",method = RequestMethod.POST)
@@ -306,7 +358,22 @@ public class bussinessController {
     }
 
     @RequestMapping("/bussiness/view-room")
-    public String pageViewRoom(){
-        return "all_rooms";
+    public String pageViewRoom(HttpSession session,Model model){
+        if(session.getAttribute("statusLogin") == null){
+            return "login";
+        }
+        else {
+            model.addAttribute("isAdmin",checkAdmin(session));
+            Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
+            model.addAttribute("listHotel",hotelRepository.findHotelsByBussiness(bussiness));
+            return "all_rooms";
+        }
+    }
+
+    @RequestMapping(value="/all_rooms",method = RequestMethod.POST)
+    public ResponseEntity<?> viewRoom(@RequestParam(value="id") Integer id){
+        AjaxReponseBody result = new AjaxReponseBody();
+        result.setResult(roomRepository.findRoomsByHotel_Hotelid(id));
+        return ResponseEntity.ok(result);
     }
 }

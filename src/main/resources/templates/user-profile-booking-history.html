@@ -565,7 +565,7 @@
                     <aside class="user-profile-sidebar">
                         <div class="user-profile-avatar text-center">
                             <img th:src="@{/img/amaze_300x300.jpg}" alt="Image Alternative text" title="AMaze" />
-                            <h5>John Doe</h5>
+                            <h5 th:text="${User.firstname + ' ' + User.lastname}">John Doe</h5>
                             <p>Member Since May 2012</p>
                         </div>
                         <ul class="list user-profile-nav">
