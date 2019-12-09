@@ -19,10 +19,21 @@ $(document).ready(function(){
                         {data : 'numofchild',className: "center"},
                         {data : 'numofbed',className: "center"},
                         {data : 'price',className: "center"},
-                        {data: null,
-                            className: "center" ,
-                            defaultContent: "<button class=\"btn btn-tbl-edit btn-xs\"><i class=\"fa fa-pencil\"></i></button>" +
-                                "<a class=\"btn btn-tbl-delete btn-xs\"><i class=\"fa fa-trash-o \"></i></a>"}
+                        {
+                            data: null,
+                            className: "center",
+                            render: function (data, type, row) {
+                                return '<a href=\'/bussiness/update-room/'+ data["roomid"] +'\' class=\"btn btn-tbl-edit btn-xs\"><i class=\"fa fa-pencil\"></i></a>'
+                            }
+                        },
+
+                        {
+                            data: null,
+                            className: "center",
+                            render: function (data, type, row) {
+                                return '<a href=\'/delete-room/'+ data["roomid"] +'\' class=\"btn btn-tbl-delete btn-xs\"><i class=\"fa fa-trash-o \"></i></a>'
+                            }
+                        }
                     ]
                 })
             },

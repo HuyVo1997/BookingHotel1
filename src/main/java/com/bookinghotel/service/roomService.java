@@ -8,4 +8,5 @@ public interface roomService {
     List<Room> findAllRoom();
     Room findRoomById(int id);
     void updateRoom(Room room);
+    void deleteRoom(int id);
 }

@@ -27,4 +27,9 @@ public class roomServiceImp implements roomService {
     public void updateRoom(Room room) {
         roomRepository.save(room);
     }
+
+    @Override
+    public void deleteRoom(int id) {
+        roomRepository.deleteById(id);
+    }
 }

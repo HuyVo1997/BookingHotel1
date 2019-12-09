@@ -370,6 +370,83 @@ public class bussinessController {
         }
     }
 
+    @RequestMapping(value="/bussiness/update-room/{id}",method = RequestMethod.GET)
+    public String pageUpdateRoom(HttpSession session,@PathVariable Integer id,Model model){
+        if(session.getAttribute("statusLogin") == null){
+            return "login";
+        }
+        else {
+            model.addAttribute("isAdmin",checkAdmin(session));
+            Room room =  roomService.findRoomById(id);
+            model.addAttribute("room",room);
+            Set<Service> serviceSet =  room.getRoomservices();
+            List <Integer> services = new ArrayList<>();
+            for (Iterator<Service> it = serviceSet.iterator(); it.hasNext(); ) {
+                Service s = it.next();
+                services.add(s.getServiceid());
+            }
+            model.addAttribute("listService",serviceRepository.findServicesByServiceidBetweenAndServiceidIsNotIn(11,19,services));
+            return "update_room";
+        }
+    }
+
+    @RequestMapping(value="/update-room",method = RequestMethod.POST)
+    public String updateRoom(@RequestParam("roomid") Integer id,
+                              @RequestParam("title") String title,
+                              @RequestParam("refund") Integer cancle,
+                              @RequestParam("numadult") Integer numadult,
+                              @RequestParam("numchild") Integer numchild,
+                              @RequestParam("numbed") Integer numbed,
+                              @RequestParam("numroom") Integer numroom,
+                              @RequestParam("price") Double price,
+                              @RequestParam("roomfootage") Integer roomfootage,
+                              @RequestParam("description") String description,
+                              @RequestParam(name = "rservice",required = false) Integer[] rservice,
+                              @RequestParam(name = "removeSerive",required = false) Integer[] removeService){
+        Room room = roomService.findRoomById(id);
+        room.setDescription(description);
+        room.setRefund(cancle);
+        room.setNumofadults(numadult);
+        room.setNumofchild(numchild);
+        room.setNumofbed(numbed);
+        room.setNumroom(numroom);
+        room.setPrice(price);
+        room.setRoomfootage(roomfootage);
+        if(rservice != null){
+            Set<Service> services = new HashSet<>();
+            for(int i = 0 ; i < rservice.length ; i++){
+                Service service = serviceRepository.findById(rservice[i]).get();
+                services.add(service);
+            }
+            for (Iterator<Service> it = room.getRoomservices().iterator(); it.hasNext(); ) {
+                Service s = it.next();
+                services.add(s);
+            }
+             room.setRoomservices(services);
+        }
+
+        if(removeService != null){
+            Set<Service> services = room.getRoomservices();
+            for(int i = 0; i < removeService.length ; i++){
+                services.remove(serviceRepository.findById(removeService[i]).get());
+            }
+            room.setRoomservices(services);
+        }
+        roomService.updateRoom(room);
+        return "redirect:/bussiness/view-room";
+    }
+
+    @RequestMapping(value="/delete-room/{id}",method = RequestMethod.GET)
+    public String deleteRoom(HttpSession session,@PathVariable Integer id){
+        if(session.getAttribute("statusLogin") == null){
+            return "login";
+        }
+        else {
+            roomService.deleteRoom(id);
+            return "redirect:/bussiness/view-room";
+        }
+    }
+
     @RequestMapping(value="/all_rooms",method = RequestMethod.POST)
     public ResponseEntity<?> viewRoom(@RequestParam(value="id") Integer id){
         AjaxReponseBody result = new AjaxReponseBody();

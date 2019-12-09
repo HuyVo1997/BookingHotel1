@@ -1,180 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8efa11c-2c4c-4c79-8592-45870056f0de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/table_room.js" afterDir="false" />
+    <list default="true" id="e8efa11c-2c4c-4c79-8592-45870056f0de" name="Default Changelist" comment="Add Room For hotel's Bussiness">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/update_room.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/bussiness/bussinessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/bussiness/bussinessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/controller/PaypalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/controller/PaypalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/controller/userController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/filter/AjaxReponseBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/filter/AjaxReponseBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/bookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/bookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/roleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/roleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/roomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/repository/roomRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activities-search-results-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activities-search-results-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activities-search-results-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activities-search-results-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activities.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activitiy-details-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activitiy-details-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activitiy-details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activitiy-payment-unregistered.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activitiy-payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activity-payment-registered-card.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activity-search-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/activity-search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add_room.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add_room.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/security/securityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/security/securityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/service/roomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/service/roomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bookinghotel/serviceimplement/roomServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bookinghotel/serviceimplement/roomServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/table_room.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/table_room.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/all_rooms.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/all_rooms.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog-full-width.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog-post-full-width.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog-post-sidebar-left.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog-post.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog-sidebar-left.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car-details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car-payment-registered-card.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car-payment-unregistered.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car-payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car-search-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car-search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cars-results-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cars-results-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cars-results-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cars-results-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/comming-soon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/contact-us.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/feature-elements.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/feature-forms.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/feature-grid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/feature-hovers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/feature-icon-effects.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/feature-icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/feature-lightbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/feature-media.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/feature-typography.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/flight-payment-registered-card.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/flight-payment-unregistered.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/flight-payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/flight-search-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/flight-search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/flights-search-results-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/flights-search-results-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/flights-search-results-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/flights.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gallery-2-col.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gallery-3-col.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gallery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/hotel-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/hotel-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/hotel-payment-registered-card.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/hotel-payment-registered-card.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/hotel-search-results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/hotel-search-results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index-bussiness.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index-bussiness.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/new_booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/new_booking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/preview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rental-payment-registered-card.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rental-payment-unregistered.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rental-payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rentals-details-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rentals-details-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rentals-details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rentals-search-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rentals-search-results-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rentals-search-results-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rentals-search-results-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rentals-search-results-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rentals-search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rentals.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/update_hotel.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/update_hotel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-profile-booking-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-profile-booking-history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/view_booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/view_booking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/view_pending.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/view_pending.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/controller/PaypalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/controller/PaypalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/controller/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/controller/userController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/filter/AjaxReponseBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/filter/AjaxReponseBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Booking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/repository/bookingRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/repository/bookingRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/repository/roomRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/repository/roomRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activities-search-results-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activities-search-results-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activities-search-results-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activities-search-results-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activities.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activitiy-details-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activitiy-details-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activitiy-details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activitiy-payment-unregistered.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activitiy-payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activity-payment-registered-card.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activity-search-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/activity-search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/blog-full-width.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/blog-post-full-width.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/blog-post-sidebar-left.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/blog-post.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/blog-sidebar-left.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/car-details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/car-payment-registered-card.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/car-payment-unregistered.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/car-payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/car-search-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/car-search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/cars-results-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/cars-results-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/cars-results-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/cars-results-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/cars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/comming-soon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/contact-us.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/feature-elements.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/feature-forms.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/feature-grid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/feature-hovers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/feature-icon-effects.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/feature-icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/feature-lightbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/feature-media.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/feature-typography.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/flight-payment-registered-card.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/flight-payment-unregistered.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/flight-payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/flight-search-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/flight-search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/flights-search-results-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/flights-search-results-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/flights-search-results-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/flights.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/gallery-2-col.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/gallery-3-col.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/gallery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/hotel-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/hotel-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/hotel-payment-registered-card.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/hotel-payment-registered-card.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Hotel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/model/Service.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/repository/roleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/repository/roleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/security/securityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/security/securityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/service/roomService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/service/roomService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bookinghotel/serviceimplement/roomServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bookinghotel/serviceimplement/roomServiceImp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/hotel-search-results.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/hotel-search-results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/preview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rental-payment-registered-card.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rental-payment-unregistered.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rental-payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rentals-details-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rentals-details-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rentals-details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rentals-search-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rentals-search-results-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rentals-search-results-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rentals-search-results-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rentals-search-results-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rentals-search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rentals.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user-profile-booking-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user-profile-booking-history.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -463,7 +306,8 @@
       <workItem from="1575695751308" duration="770000" />
       <workItem from="1575698143229" duration="17000" />
       <workItem from="1575764306740" duration="16926000" />
-      <workItem from="1575846756210" duration="4639000" />
+      <workItem from="1575846756210" duration="8912000" />
+      <workItem from="1575860694992" duration="752000" />
     </task>
     <task id="LOCAL-00001" summary="Update Refund">
       <created>1575009753084</created>
@@ -514,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575607699944</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add Room For hotel's Bussiness">
+      <created>1575851919322</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1575851919322</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
