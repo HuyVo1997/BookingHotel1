@@ -237,27 +237,7 @@
 							</a>
 							<ul class="dropdown-menu dropdown-menu-default animated jello">
 								<li>
-									<a href="user_profile.html">
-										<i class="icon-user"></i> Profile </a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="icon-settings"></i> Settings
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="icon-directions"></i> Help
-									</a>
-								</li>
-								<li class="divider"> </li>
-								<li>
-									<a href="lock_screen.html">
-										<i class="icon-lock"></i> Lock
-									</a>
-								</li>
-								<li>
-									<a href="login.html">
+									<a th:href="@{/logoutBussiness}">
 										<i class="icon-logout"></i> Log Out </a>
 								</li>
 							</ul>
@@ -294,23 +274,11 @@
 											<img th:src="@{/assets/img/dp.jpg}" class="img-responsive" alt=""> </div>
 									</div>
 									<div class="profile-usertitle">
-										<div class="sidebar-userpic-name"> John Deo </div>
+										<div class="sidebar-userpic-name" th:text="${user.username}"> John Deo </div>
 										<div class="profile-usertitle-job"> Manager </div>
 									</div>
 									<div class="sidebar-userpic-btn">
-										<a class="tooltips" href="user_profile.html" data-placement="top"
-										   data-original-title="Profile">
-											<i class="material-icons">person_outline</i>
-										</a>
-										<a class="tooltips" href="email_inbox.html" data-placement="top"
-										   data-original-title="Mail">
-											<i class="material-icons">mail_outline</i>
-										</a>
-										<a class="tooltips" href="chat.html" data-placement="top"
-										   data-original-title="Chat">
-											<i class="material-icons">chat</i>
-										</a>
-										<a class="tooltips" th:href="@{/bussiness/logoutBussiness}" data-placement="top"
+										<a class="tooltips" th:href="@{/logoutBussiness}" data-placement="top"
 										   data-original-title="Logout">
 											<i class="material-icons">input</i>
 										</a>

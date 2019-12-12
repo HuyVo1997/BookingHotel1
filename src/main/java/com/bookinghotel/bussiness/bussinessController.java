@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -110,7 +111,7 @@ public class bussinessController {
         Bussiness bussiness = bussinessRepository.findBussinessByUsername(username);
         if(BCrypt.checkpw(password,bussiness.getPassword())){
             session.setAttribute("statusLogin",bussiness);
-            return "redirect:/bussiness/home-page";
+            return "redirect:/bussiness/view-hotel";
         }
         else {
             return "/bussiness/login";
@@ -123,6 +124,8 @@ public class bussinessController {
             return "login";
         }
         else {
+            Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
+            model.addAttribute("user",bussiness);
             model.addAttribute("isAdmin",checkAdmin(session));
             return "index-bussiness";
         }
@@ -134,6 +137,9 @@ public class bussinessController {
             return "login";
         }
         else {
+            model.addAttribute("isAdmin",checkAdmin(session));
+            Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
+            model.addAttribute("user",bussiness);
             model.addAttribute("listService",serviceRepository.findServicesByServiceidBetween(1,10));
             return "new_booking";
         }
@@ -147,6 +153,7 @@ public class bussinessController {
         else {
             model.addAttribute("isAdmin",checkAdmin(session));
             Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
+            model.addAttribute("user",bussiness);
             model.addAttribute("listHotel",hotelRepository.findHotelsByBussiness(bussiness));
             return "view_booking";
         }
@@ -211,6 +218,7 @@ public class bussinessController {
         else {
             model.addAttribute("isAdmin",checkAdmin(session));
             Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
+            model.addAttribute("user",bussiness);
             model.addAttribute("listHotel",hotelRepository.findHotelsByBussiness(bussiness));
             model.addAttribute("listService",serviceRepository.findServicesByServiceidBetween(11,19));
             model.addAttribute("listTypeRoom",typeroomService.getAllTypeRooms());
@@ -273,6 +281,8 @@ public class bussinessController {
             return "login";
         }
         else {
+            Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
+            model.addAttribute("user",bussiness);
             model.addAttribute("isAdmin",checkAdmin(session));
             model.addAttribute("listHotelPending",hotelService.findAllhotel());
             return "view_pending";
@@ -365,6 +375,7 @@ public class bussinessController {
         else {
             model.addAttribute("isAdmin",checkAdmin(session));
             Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
+            model.addAttribute("user",bussiness);
             model.addAttribute("listHotel",hotelRepository.findHotelsByBussiness(bussiness));
             return "all_rooms";
         }
@@ -378,6 +389,8 @@ public class bussinessController {
         else {
             model.addAttribute("isAdmin",checkAdmin(session));
             Room room =  roomService.findRoomById(id);
+            Bussiness bussiness = (Bussiness)session.getAttribute("statusLogin");
+            model.addAttribute("user",bussiness);
             model.addAttribute("room",room);
             Set<Service> serviceSet =  room.getRoomservices();
             List <Integer> services = new ArrayList<>();
@@ -452,5 +465,15 @@ public class bussinessController {
         AjaxReponseBody result = new AjaxReponseBody();
         result.setResult(roomRepository.findRoomsByHotel_Hotelid(id));
         return ResponseEntity.ok(result);
+    }
+
+    @RequestMapping(value="/logoutBussiness")
+    public String logout(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+        return "redirect:/bussiness/home-page";
+
     }
 }

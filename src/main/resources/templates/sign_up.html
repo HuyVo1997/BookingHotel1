@@ -20,13 +20,24 @@
 	<link rel="stylesheet" th:href="@{assets/css/pages/extra_pages.css}">
 	<!-- favicon -->
 	<link rel="shortcut icon" th:href="@{assets/img/favicon.ico}" />
+	<script type="text/javascript" th:src="@{/js/jquery-1.11.3.min.js}"></script>
 </head>
 
 <body>
+	<script>
+		$(document).ready(function(){
+			$('#formRegister').submit(function(e){
+				if($('#pass').val() != $('#pass2').val()){
+					alert('Confirm Password Not Correct');
+					e.preventDefault();
+				}
+			})
+		})
+	</script>
 	<div class="limiter">
 		<div class="container-login100 page-background">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="/register-success" method="post">
+				<form class="login100-form validate-form" id="formRegister" action="/register-success" method="post">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-flower"></i>
 					</span>
@@ -48,13 +59,13 @@
 						</div>
 						<div class="col-lg-6 p-t-20">
 							<div class="wrap-input100 validate-input" data-validate="Enter password">
-								<input class="input100" type="password" name="pass" placeholder="Password">
+								<input class="input100" type="password" id="pass" name="pass" placeholder="Password">
 								<span class="focus-input100" data-placeholder="&#xf191;"></span>
 							</div>
 						</div>
 						<div class="col-lg-6 p-t-20">
 							<div class="wrap-input100 validate-input" data-validate="Enter password again">
-								<input class="input100" type="password" name="pass2" placeholder="Confirm password">
+								<input class="input100" type="password" id="pass2" name="pass2" placeholder="Confirm password">
 								<span class="focus-input100" data-placeholder="&#xf191;"></span>
 							</div>
 						</div>
