@@ -28,11 +28,13 @@ public interface hotelRepository extends JpaRepository<Hotel,Integer>{
                 "JOIN FETCH hotel.rooms room " +
                 "JOIN FETCH room.roomservices rservice " +
                 "WHERE hotel.location LIKE %:location% " +
-                "AND (:price is NULL OR hotel.price = (:price)) " +
+                "AND (:fromprice is NULL OR hotel.price >= (:fromprice)) " +
+                "AND (:toprice is NULL OR hotel.price <= (:toprice)) " +
                 "AND (COALESCE(:star,null) IS NULL OR hotel.star IN (:star)) " +
                 "AND (COALESCE(:hservice,null) IS NULL OR hservice.name IN (:hservice))")
         List<Hotel> filterHotel(@Param("location") String location,
-                                @Param("price") Double price,
+                                @Param("fromprice") Double fromprice,
+                                @Param("toprice") Double toprice,
                                 @Param("star") List<Integer> star,
                                 @Param("hservice") List<String> hservice);
 

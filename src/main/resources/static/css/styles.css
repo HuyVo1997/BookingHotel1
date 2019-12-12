@@ -7788,7 +7788,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .i-check,
 .i-radio {
   display: inline-block;
-  *display: inlne;
+  *display: inline;
   vertical-align: middle;
   margin: 0;
   padding: 0;

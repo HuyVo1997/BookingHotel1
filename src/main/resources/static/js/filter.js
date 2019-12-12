@@ -1,11 +1,24 @@
 $(document).ready(function () {
     var location = "Đà Nẵng";
-    var price = $('#price').val();
+    var fromprice = $('#fromprice').val();
+    var toprice = $('#toprice').val();
     var star = $('#star').val();
     var hservice = $('#hservice').val();
     var remove = 0;
     var option = 0;
     var reload = 0;
+    var replaceFrom = $('.irs-from').text();
+    var replaceTo = $('.irs-to').text();
+    var fromprice = replaceFrom.replace("$","")
+    var toprice = replaceTo.replace("$","")
+
+    $('.irs').on('click',function(){
+        var replaceFrom = $('.irs-from').text();
+        var replaceTo = $('.irs-to').text();
+        fromprice = replaceFrom.replace("$","")
+        toprice = replaceTo.replace("$","")
+        loadData();
+    })
     loadData();
 
     $('input[type="checkbox"], input[type="radio"]').on('ifChanged', function (e) {
@@ -43,7 +56,8 @@ $(document).ready(function () {
             type: "POST",
             url: "/hotelResult",
             data: {location: location,
-                price: price,
+                fromprice: fromprice,
+                toprice: toprice,
                 star: star,
                 hservice: hservice,
                 remove: remove,

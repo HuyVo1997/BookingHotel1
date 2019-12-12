@@ -44,6 +44,7 @@
     <link rel="alternate stylesheet" type="text/css" th:href="@{/css/schemes/leather.css}" title="leather" media="all" />
     <link rel="alternate stylesheet" type="text/css" th:href="@{/css/schemes/denim.css}" title="denim" media="all" />
     <link rel="alternate stylesheet" type="text/css" th:href="@{/css/schemes/scarlet.css}" title="scarlet" media="all" />
+    <script type="text/javascript" th:src="@{/js/jquery-1.11.3.min.js}"></script>
 </head>
 
 <body>
@@ -59,6 +60,41 @@
             js.src = "../../../../connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <style>
+        .tt-dropdown-menu {
+            display: none !important;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('#country').keyup(function(){
+                var query = $(this).val();
+                if(query != ''){
+                    $.ajax({
+                        url: "/loadLocation",
+                        method: "POST",
+                        data: {location:query},
+                        dataType: 'json',
+                        success: function (data){
+                            $("#countryList").empty();
+
+                            $.each(data.locationResult,function(i,val){
+                                $('#countryList').fadeIn();
+                               $('#countryList').append("<li class='list-group-item'>" + val.name + "</li>")
+                            });
+                        }
+                    })
+                }
+            });
+            $('.tt-dropdown-menu').click(function(){
+
+            })
+            $(document).on('click','li',function(){
+                $('#country').val($(this).text());
+                $('#countryList').fadeOut();
+            })
+        })
     </script>
     <!-- /FACEBOOK WIDGET -->
     <div class="global-wrap">
@@ -285,7 +321,12 @@
                                                         <input class="typeahead form-control"
                                                                name="location"
                                                             placeholder="City, Airport, Point of Interest or U.S. Zip Code"
-                                                            type="text" />
+                                                            type="text" id="country"/>
+                                                        <div >
+                                                            <ul id="countryList" class="list-unstyled list-group">
+
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                     <div class="input-daterange" >
                                                         <div class="row">

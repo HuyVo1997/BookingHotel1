@@ -13,12 +13,17 @@ import com.bookinghotel.service.roomService;
 import com.paypal.api.payments.*;
 import com.paypal.base.rest.PayPalRESTException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Base64;
 import java.util.Random;
@@ -39,6 +44,9 @@ public class PaypalController {
 
     @Autowired
     bookingService bookingService;
+
+    @Autowired
+    JavaMailSender javaMailSender;
 
     public static final String SUCCESS_URL = "paypal/success";
     public static final String CANCLE_URL = "paypal/cancle";
@@ -103,6 +111,13 @@ public class PaypalController {
                     booking = new Booking("hotel",user,room,room.getTyperoom().getType(),hotelController.locationText,
                             hotelController.dateStart,hotelController.dateEnd,priceTotal,1,numRoom, null, null);
                 }
+                try{
+                    sendEmailWithAttachment();
+                }catch (MessagingException e){
+                    e.printStackTrace();
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
             }
             else{
                 int iduser = 0;
@@ -141,5 +156,24 @@ public class PaypalController {
     public String refundPay(@PathVariable String id) throws PayPalRESTException {
         paypalService.refund(id);
         return "redirect:/user/booking-history";
+    }
+
+    void sendEmailWithAttachment() throws MessagingException, IOException {
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String email = auth.getName();
+
+        MimeMessage msg = javaMailSender.createMimeMessage();
+
+        // true = multipart message
+        MimeMessageHelper helper = new MimeMessageHelper(msg, true);
+        helper.setTo(email);
+
+        helper.setSubject("Testing from Spring Boot");
+
+        helper.setText("<h1>Booking Success!</h1>", true);
+
+        javaMailSender.send(msg);
+
     }
 }

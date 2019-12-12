@@ -67,7 +67,8 @@ public class hotelController {
 
     @RequestMapping(value="/hotelResult",method= RequestMethod.POST)
     public String hotelResult(Model hotelResult,
-                              @RequestParam(value = "price", required = false) Double price,
+                              @RequestParam(value = "fromprice") Double fromprice,
+                              @RequestParam(value = "toprice") Double toprice,
                               @RequestParam(value = "star",required = false) Integer starOption,
                               @RequestParam(value="hservice", required = false) String hservice,
                               @RequestParam(value = "remove") Integer remove,
@@ -115,7 +116,7 @@ public class hotelController {
                 hserviceDistict = hserviceList.stream().distinct().collect(Collectors.toList());
             }
         }
-        List<Hotel> result = hotelRepository.filterHotel(locationText,price,starDistinct,hserviceDistict);
+        List<Hotel> result = hotelRepository.filterHotel(locationText,fromprice,toprice,starDistinct,hserviceDistict);
         hotelResult.addAttribute("listHotelResult",result);
         return "star";
     }

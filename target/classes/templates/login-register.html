@@ -162,19 +162,19 @@
                                     <form method="post" th:action="@{/register}">
                                         <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
                                             <label>First Name</label>
-                                            <input class="form-control" placeholder="e.g. John Doe" type="text" name="firstname" />
+                                            <input class="form-control" placeholder="e.g. John Doe" type="text" name="firstname" required/>
                                         </div>
                                         <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
                                             <label>Last Name</label>
-                                            <input class="form-control" placeholder="e.g. John Doe" type="text" name="lastname" />
+                                            <input class="form-control" placeholder="e.g. John Doe" type="text" name="lastname" required/>
                                         </div>
                                         <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-envelope input-icon input-icon-show"></i>
                                             <label>Email</label>
-                                            <input class="form-control" placeholder="e.g. johndoe@gmail.com" type="text" name="email"/>
+                                            <input class="form-control" placeholder="e.g. johndoe@gmail.com" type="email" name="email" required/>
                                         </div>
                                         <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-lock input-icon input-icon-show"></i>
                                             <label>Password</label>
-                                            <input class="form-control" type="password" placeholder="my secret password" name="password"/>
+                                            <input class="form-control" type="password" placeholder="my secret password" name="password" required/>
                                         </div>
                                         <input class="btn btn-primary" type="submit" value="Sign up for Traveler" />
                                     </form>

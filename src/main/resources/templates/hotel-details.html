@@ -136,7 +136,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            <a class="logo" href="index.html">
+                            <a class="logo" th:href="@{/}">
                                 <img th:src="@{/img/logo-invert.png}" alt="Image Alternative text" title="Image Title" />
                             </a>
                         </div>
@@ -156,7 +156,7 @@
                                     </li>
                                     <th:block th:if="${Email != 'anonymousUser'}">
                                         <li class="top-user-area-avatar">
-                                            <a href="user-profile.html">
+                                            <a th:href="@{/user/profile}">
                                                 <img class="origin round" th:src="@{/img/amaze_40x40.jpg}"
                                                      alt="Image Alternative text" title="AMaze" />Hi, <span th:text="${User.firstname}"></span></a>
                                         </li>

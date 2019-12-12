@@ -1,20 +1,12 @@
 package com.bookinghotel.serviceimplement;
 
 import com.bookinghotel.model.Hotel;
-import com.bookinghotel.model.Room;
 import com.bookinghotel.repository.hotelRepository;
 import com.bookinghotel.repository.roomRepository;
 import com.bookinghotel.service.hotelService;
-import com.sun.tools.javac.util.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
