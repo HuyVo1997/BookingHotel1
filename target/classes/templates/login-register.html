@@ -130,7 +130,7 @@
                 <div class="bg-mask"></div>
                 <div class="bg-img" style="background-image:url(img/people_on_the_beach_1280x852.jpg);"></div>
                 <div class="bg-holder-content full text-white">
-                    <a class="logo-holder" href="index.html">
+                    <a class="logo-holder" href="/">
                         <img th:src="@{/img/logo-white.png}" alt="Image Alternative text" title="Image Title" />
                     </a>
                     <div class="full-center">
@@ -154,7 +154,12 @@
                                             <label>Password</label>
                                             <input class="form-control" type="password" placeholder="my secret password" name="password"/>
                                         </div>
-                                        <input class="btn btn-primary" type="submit" value="Sign in" />
+                                        <input class="btn btn-primary" type="submit" value="Sign in" />  <br>
+                                        or Sign in with
+                                        <br>
+                                        <a href="/auth/facebook" class="btn btn-primary" style="background: #0d47a1"><span class="fa fa-facebook"></span> Facebook</a>
+                                        &nbsp;<a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/login-google&response_type=code
+		&client_id=1084661799115-igq7ncp1sb8beht29f3bs3u36cm0ilsj.apps.googleusercontent.com&approval_prompt=force" class="btn btn-danger" style="background: red"><span class="fa fa-google-plus"></span> Google</a>
                                     </form>
                                 </div>
                                 <div class="col-md-4">
