@@ -143,6 +143,13 @@
             <artifactId>spring-security-oauth2-autoconfigure</artifactId>
             <version>2.1.5.RELEASE</version>
         </dependency>
+
+        <!-- restfb -->
+        <dependency>
+            <groupId>com.restfb</groupId>
+            <artifactId>restfb</artifactId>
+            <version>2.3.0</version>
+        </dependency>
     </dependencies>
 
     <build>
